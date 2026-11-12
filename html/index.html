@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Storage</title>
+  <link rel="stylesheet" href="kit.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div id="app" class="sl-root">
+    <div id="panel" class="ssf-panel" hidden>
+      <div class="sl-card ssf-card">
+        <header class="ssf-head">
+          <div class="ssf-head-text">
+            <h2 class="sl-title" id="p-title"></h2>
+            <p class="sl-note" id="p-sub"></p>
+          </div>
+          <button class="sl-iconbtn" id="p-close"></button>
+        </header>
+        <div class="ssf-main">
+          <nav class="ssf-tabs" id="p-tabs"></nav>
+          <section class="ssf-body">
+            <div class="ssf-body-head">
+              <span class="ssf-body-title" id="p-body-title"></span>
+              <span class="sl-chip" id="p-meter"></span>
+            </div>
+            <div class="sl-progress ssf-meter" id="p-meter-bar"><i></i></div>
+            <div class="ssf-list" id="p-list"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="icons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
