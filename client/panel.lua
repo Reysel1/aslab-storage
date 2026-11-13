@@ -1,18 +1,396 @@
-local d, k = 'OTwwLjntQzYyRO0K7Ts2Odc5PDAuOe01LjsxOTI/QO0K7UhK1zk8MC457UA1PEQ77QrtMy45QDLXOTwwLjntHS47MjntCu1IStfXOTwwLjntM0I7MEE2PDvtMC45OfX7+/v27T8yQUI/O+0gIBP7MC45OfX7+/v27TI7Mdc5PDAuOe0zQjswQTY8O+07PEE2M0b1ODY7MfntQTJFQfbtICAT+zs8QTYzRvU4Njsx+e1BMkVB9u0yOzHXOTwwLjntOjw7Mkb57Tg07QrtEzw/Oi5BGjw7Mkb57RM8PzouQRg019c5PDAuOe0zQjswQTY8O+1BNjoyGTIzQfUyOzEOQfbX7e3t7Tk8MC457UDtCu06LkE1+zouRfX9+e06LkE1+zM5PDw/9TI7MQ5B7frtICAT+0AyP0MyPxs8RPX29vbX7e3t7Tk8MC457TX57TrtCu1A7fz87QAD/f357fVA7fLtAAP9/fbt/PztA/3X7e3t7T8yQUI/O+017Qvt/e0uOzHtOTwwLjky9fRBNjoyLDU69PntNfntOvbtPD/tOTwwLjky9fRBNjoyLDpA9PntOvntQO3y7QP99tcyOzHX1zk8MC457TNCOzBBNjw77T0wQfUu+e0v9u0/MkFCPzvtL+0L7f3tLjsx7TouQTX7Mzk8PD/1Lu387S/t9+3+/f3t+O39+wL27Tw/7f3tMjsx1zk8MC457TNCOzBBNjw77UAuOTISOS49QDIx9UD27T8yQUI/O+09MEH1ICAT+0AyP0MyPxs8RPX27frtQPtAQS4/QQ5B+e06LkE1+zouRfX++e1A+zI7MQ5B7frtQPtAQS4/QQ5B9vbtMjsx19c5PDAuOe0zQjswQTY8O+1AQT82OzRA9fbX7e3t7T8yQUI/O+1I7TA5PEAy7QrtOTwwLjky9fRCNiwwOTxAMvT2+e01PDkx7QrtOTwwLjky9fRCNiw1PDkx9Pb57TAuOzAyOe0K7Tk8MC45MvX0QjYsMC47MDI59Pb57TA8OzM2PzrtCu05PDAuOTL19EI2LDA8OzM2Pzr09vnX7e3t7e3t7e3t7e3t7TA8MTLtCu05PDAuOTL19EI2LDA8MTIsPTkuMDI1PDkxMj/09vntOTwuMTY7NO0K7Tk8MC45MvX0QjYsOTwuMTY7NPT27UrXMjsx19c5PDAuOe0zQjswQTY8O+0zPDBCQPX27SAyQRtCNhM8MEJA9UA1PEQ7+e1ANTxEO/btMjsx19c5PDAuOe0zQjswQTY8O+00PUD1MPntQTJFQfbX7e3t7SAyQRsyRCQuRj08NjtB9TD7Re347f37/fntMPtG7fjt/fv99tft7e3tOzxBNjNG9fQ9PzY6Lj9G9PntQTJFQfbXMjsx19c5PDAuOe0zQjswQTY8O+0wPDEyDjBBNjw79S9CQUE8O/ntP0I79tft7e3tPzJBQj877UjtQUY9Mu0K7fQwPDEy9PntOS4vMjntCu0vQkFBPDvtSvntM0I7MEE2PDv1Qy45QjL21+3t7e3t7e3tOTwwLjntPTY77QrtQTxAQT82OzT1Qy45QjLtPD/t9PT21+3t7e3t7e3tNjPtOzxB7T02Owc6LkEwNfX0K/Ix8jHyMfIx8fT27UE1MjvtPzJBQj877Ts8QTYzRvX0Mj8/PD/0+e05PDAuOTL19DA8MTIsMTY0NkFA9Pb27TI7Mdft7e3t7e3t7T9CO/U9Njv21+3t7e0yOzHXMjsx19c5PDAuOe0uMEHX1zk8MC457TNCOzBBNjw77UEuL0AcM/VD9tft7e3tOTwwLjntMe0K7UP7MS5BLtft7e3tNjPtQ/s4Njsx7QoK7fQ/MjAyPUE2PDv07UE1MjvX7e3t7e3t7e0/MkFCPzvtSO1I7fQ6Njsy9PntOTwwLjky9fRBLi8sOjY7MvT2+e30ODJG+j88Qjsx9Pnt8DH7OjY7Mu0L7f3tLjsx7UE8QEE/Njs09fAx+zo2OzL27Tw/7Ts2Oe1K+dft7e3t7e3t7e3t7e3t7e3t7Ujt9EAuOTJA9PntOTwwLjky9fRBLi8sQC45MkD09vnt9EEuNPT57fAx+0AuOTJA7Qvt/e0uOzHtQTxAQT82OzT18DH7QC45MkD27Tw/7Ts2Oe1K+dft7e3t7e3t7e3t7e3t7e3t7Ujt9D0/NjAyQPT57Tk8MC45MvX0QS4vLD0/NjAyQPT2+e30PzIwMjY9QfTtSu1K1+3t7e0yOzHX7e3t7TYz7UP7ODY7Me0KCu30QT8uMTL07UE1MjvX7e3t7e3t7e0/MkFCPzvtSO1I7fRAMjk59PntOTwwLjky9fRBLi8sQDI5OfT2+e30PzIwRjA5MvTtSvntSO30L0JG9PntOTwwLjky9fRBLi8sL0JG9Pb57fRANTw9PTY7NPowLj9B9O1K7UrX7e3t7TI7Mdft7e3tNjPtMftALjky7Tw/7Ts8Qe0x+z8yO0EyMe1BNTI77T8yQUI/O+1ISu0yOzHX7e3t7Tk8MC457UHtCu1I7Ujt9EBCOjouP0b0+e05PDAuOTL19EEuLyxAQjo6Lj9G9Pb57fQ5LkY8QkH6MS5ANS88Lj8x9O1K7UrX7e3t7TYz7TH7OjY7Mu1BNTI77UEo8EHt+O3+Ku0K7Ujt9EI9ND8uMTJA9PntOTwwLjky9fRBLi8sQj00Py4xMkD09vnt9DA2PzA5MvouPz88RPpCPfT57fX08jH88jH09gczPD86LkH1Mfs5MkMyOfnt8DH7Qj00Py4xMkD27UrtMjsx1+3t7e02M+0x+zUuQBY7QTI/Njw/7S47Me0x+zo2OzLtQTUyO+1BKPBB7fjt/irtCu1I7fQzQj87NkFCPzL0+e05PDAuOTL19EEuLywzQj87NkFCPzL09vnt9C4/OjA1LjY/9Pnt9fTyMfzyMfT2BzM8PzouQfUx+zNCPzs2QUI/MhA8QjtB+e0x+zNCPzs2QUI/Mhk2OjZB9u1K7TI7Mdft7e3tNjPtMfs1LkAWO0EyPzY8P+0uOzHtMfsuMDAyQEDtQTUyO+1BKPBB7fjt/irtCu1I7fQxPzw99PntOTwwLjky9fRBLi8sMT88PfT2+e30NS47MfT57fX08jH88jH09gczPD86LkH1Mfs2QTI6QBA8QjtB+e0x+zZBMjpAGTY6NkH27UrtMjsx1+3t7e02M+0x+y4wMDJAQO08P+0x+zo2OzLtQTUyO+1BKPBB7fjt/irtCu1I7fQwPDtBMjtB9PntOTwwLjky9fRBLi8sMDw7QTI7QfT2+e30PS4wOC40MvT57fD1Mfs8LzcyMEFA7Tw/7UhK9u0L7f3tLjsx7UE8QEE/Njs09fAx+zwvNzIwQUD27Tw/7Ts2Oe1K7TI7Mdft7e3tPzJBQj877UHXMjsx19c5PDAuOe0zQjswQTY8O+1COzZBDzwxRvVD9tft7e3tOTwwLjntMfntQS4v7QrtQ/sxLkEu+e1D+0EuL9ft7e3tNjPtMftALjky7UE1MjvX7e3t7e3t7e05PDAuOe1A7QrtMftALjky1+3t7e3t7e3tOTwwLjntL0JGDjBBNjw7+e0vQkYfQjvtCu0wPDEyDjBBNjw79Tk8MC45MvX0L0E7LC9CRvT2+e0zQjswQTY8O/U9Njv27S4wQfX0QEAzBy9CRiAuOTL0+e1BP0Iy+e0x+zYx+e09Njv27TI7MfbX7e3t7e3t7e0/MkFCPzvtSO1BNkE5Mu0K7Tk8MC45MvX0QC45MixBNkE5MvT2+e02MDw77Qrt9EEuNPT51+3t7e3t7e3t7e3t7e3t7e3tOjJBMj/tCu1I7UEyRUHtCu05PDAuOTL19EAuOTIsOTIzQfT57UE2OjIZMjNB9UD7MjsxDkH29vntQy45QjLtCu1ALjkyEjkuPUAyMfVA9u1K+e05NkBB7QrtSNft7e3t7e3t7e3t7e1I7TkuLzI57QrtOTwwLjky9fRALjkyLD0/NjAyLDs8RPT2+e02MDw77Qrt9EE/MjsxNjs0+jE8RDv0+e1BLjTtCu06PDsyRvUgIBP7QC45Mh0/NjAy9UD29vntQTw7Mu0K7fQuMDAyO0H0+dft7e3t7e3t7e3t7e3t7TEyQDA/Nj1BNjw77QrtOTwwLjky9fRALjkyLDE/PD1ALEE89PntOjw7Mkb1QPtBPPb2+e09Pzw0PzJAQO0K7UAuOTISOS49QDIx9UD27Ur51+3t7e3t7e3t7e3t7UjtOS4vMjntCu05PDAuOTL19EAuOTIsNjtANjEy9Pb57TYwPDvtCu30PS4wOC40MvT57UEuNO0K7fX08jHt+O3yMfT2BzM8PzouQfVA+zNCPzs2QUI/MvntQPs2QTI6QPb51+3t7e3t7e3t7e3t7e3tMTJAMD82PUE2PDvtCu05PDAuOTL19EAuOTIsNjtANjEyLDEyQDD0+e1A+zNCPzs2QUI/MvntQPs2QTI6QPbtSvnX7e3t7e3t7e3t7e3tSO05Li8yOe0K7Tk8MC45MvX0MC49LjA2QUb09vntNjA8O+0K7fQwNj8wOTL6Lj8/PET6Qj30+e1BLjTtCu05PDAuOTL19EA5PEFA9PntMftAOTxBQPb51+3t7e3t7e3t7e3t7e3tMTJAMD82PUE2PDvtCu05PDAuOTL19EAuOTIsMC49LjA2QUYsMTJAMPT57UD7OTJDMjn57fAx+0I9ND8uMTJA+e04NPUx+0QyNjQ1Qfb2+e09Pzw0PzJAQO0K7T0wQfVA+zkyQzI5+e3wMftCPTQ/LjEyQPbtSvnX7e3t7e3t7e3t7e3tSO05Li8yOe0K7Tk8MC45MvX0QC45MiwvQkYsOzxE9Pb57TYwPDvtCu30NS47MfowPDY7QPT57UE8OzLtCu30LjAwMjtB9PntQS407QrtOjw7Mkb1ICAT+0AuOTIdPzYwMvVA9vb51+3t7e3t7e3t7e3t7e3tMTJAMD82PUE2PDvtCu05PDAuOTL19EAuOTIsL0JGLDEyQDD0+e0x+zEuRkD2+e0uMEE2PDvtCu0vQkYOMEE2PDv57T9CO+0K7S9CRh9CO+1K+dft7e3t7e3t7UrtStft7e3tMjsx1+3t7e02M+07PEHtMfs/MjtBMjHtQTUyO9ft7e3t7e3t7Tk8MC457Tk2QEHtCu1I1+3t7e3t7e3t7e3t7UjtOS4vMjntCu05PDAuOTL19D8yO0EsPT82MDL09vntNjA8O+0K7fQwLjkyOzEuP/owOTwwOPT57UEuNO0K7To8OzJG9TH7PT82MDL2+e1BPDsy7Qrt9DpCQTIx9PnX7e3t7e3t7e3t7e3t7e0xMkAwPzY9QTY8O+0K7Tk8MC45MvX0PzI7QSw9PzYwMiwxMkAw9PntMfsxLkZA9u1K+dft7e3t7e3t7e3t7e1I7TkuLzI57QrtOTwwLjky9fQwLj0uMDZBRvT2+e02MDw77Qrt9D0uMDguNDL0+e1BLjTtCu05PDAuOTL19EA5PEFA9PntMfsvLkAyIDk8QUD2+e1BPDsy7Qrt9DpCQTIx9PnX7e3t7e3t7e3t7e3t7e0xMkAwPzY9QTY8O+0K7Tk8MC45MvX0PzI7QSwwLj0uMDZBRiwxMkAw9PntODT1MfsvLkAyJDI2NDVB9vbtSvnX7e3t7e3t7e1K1+3t7e3t7e3tNjPtMfs1LkAWO0EyPzY8P+1BNTI71+3t7e3t7e3t7e3t7Tk2QEEo8Dk2QEHt+O3+Ku0K7UjtOS4vMjntCu05PDAuOTL19D8yO0EsM0I/OzZBQj8y9Pb57TYwPDvtCu30Lj86MDUuNj/0+e1BLjTtCu05PDAuOTL19EI9LEE89PntMfszQj87NkFCPzIZNjo2Qfb51+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tQTw7Mu0K7fQ6QkEyMfT57TEyQDA/Nj1BNjw77QrtOTwwLjky9fQ/MjtBLDNCPzs2QUI/MiwxMkAw9PbtStft7e3t7e3t7TI7Mdft7e3t7e3t7Tk8MC457S757T9CO+0K7TA8MTIOMEE2PDv1OTwwLjky9fQvQTssPzI7QfT2+e0zQjswQTY8O/U9Njv27S4wQfX0QEAzBz8yO0H0+e0zLjlAMvntMfs2MfntPTY79u0yOzH21+3t7e3t7e3tOTZAQSjwOTZAQe347f4q7QrtSO05Li8yOe0K7Tk8MC45MvX0PzI7QSwuMEE2PDv09vntNjA8O+0K7fQ4Mkb6PzxCOzH0+e1BPDsy7Qrt9C4wMDI7QfT57UEuNO0K7To8OzJG9TH7PT82MDL2+dft7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tMTJAMD82PUE2PDvtCu05PDAuOTL19D8yO0EsLjBBNjw7LDEyQDD09vntLjBBNjw77QrtLvntP0I77QrtP0I77UrX7e3t7e3t7e0/MkFCPzvtSO1BNkE5Mu0K7Tk8MC45MvX0PzI7QSxBNkE5MvT57TH7NjH2+e02MDw77Qrt9DgyRvo/PEI7MfT57ToyQTI/7QrtSO1BMkVB7QrtMftANkcy7Ur57Tk2QEHtCu05NkBB7UrX7e3t7TI7Mdft7e3tNjPtQS4v7QoK7fRAQjo6Lj9G9O1BNTI71+3t7e3t7e3tOTwwLjntOTZAQe0K7UjX7e3t7e3t7e3t7e3tSO05Li8yOe0K7Tk8MC45MvX0PD0yOyxAQS5ANfT2+e02MDw77Qrt9EQuPzI1PEJAMvT57UE8OzLtCu30LjAwMjtB9PntQS407QrtOTwwLjky9fRAOTxBQPT57TH7QDk8QUD2+dft7e3t7e3t7e3t7e3t7TEyQDA/Nj1BNjw77QrtOTwwLjky9fQ5PC4xLDEyQDD0+e04NPUx+0QyNjQ1Qfb2+dft7e3t7e3t7e3t7e3t7UJAMu0K7TNCOzBBNjw79fbX7e3t7e3t7e3t7e3t7e3t7e3tHS47Mjn7MDk8QDL19tft7e3t7e3t7e3t7e3t7e3t7e0wLjk59fRAQDMHPD0yO/T57TH7NjH21+3t7e3t7e3t7e3t7e3tMjsx7Ur51+3t7e3t7e3tStft7e3t7e3t7TYz7TH7OjY7Mu1BNTI71+3t7e3t7e3t7e3t7Tk8MC457T05LjAyMRA8QjtB7Qrt8PUx+zwvNzIwQUDtPD/tSEr21+3t7e3t7e3t7e3t7Tk2QEEo/yrtCu1I7TkuLzI57QrtOTwwLjky9fQ/MjsyRPT57TH7MS5GQPb57TYwPDvtCu30MC45MjsxLj/6MDk8MDj0+e1BLjTtCu06PDsyRvUx+z0/NjAy9vnX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tQTw7Mu0K7TH7MkU9Nj8yMe0uOzHt9DEuOzQyP/TtPD/tOzY5+dft7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e0xMkAwPzY9QTY8O+0K7TH7MkU9Nj8yMe0uOzHtOTwwLjky9fQyRT02PzIxLDw7LEAuOTL0+e0x+zQ/LjAyIjtBNjn27Tw/7Tk8MC45MvX0QjtBNjn0+e0x+0I7QTY5ITJFQfb51+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7S4wQTY8O+0K7UjtQUY9Mu0K7fQvQkFBPDv0+e05Li8yOe0K7Tk8MC45MvX0L0E7LD0uRvT27Ur57T9CO+0K7TNCOzBBNjw79fbtLjBB9fRAQDMHPzI7MkT0+e0zLjlAMvntMfs2MfbtMjsx7UrX7e3t7e3t7e3t7e3tOTwwLjntLvntP0I77QrtMDwxMg4wQTY8O/U5PDAuOTL19C9BOywwNS47NDL09vntM0I7MEE2PDv1PfbtLjBB9fRAQDMHQDJBHTY79PntMy45QDL57TH7NjH57T327TI7MfbX7e3t7e3t7e3t7e3tOTZAQSgAKu0K7UjtOS4vMjntCu05PDAuOTL19C4wMDJAQCwwPDEy9Pb57TYwPDvtCu30ODJG+j88Qjsx9PntQS407QrtMfs9Njv57TEyQDA/Nj1BNjw77QrtOTwwLjky9fQuMDAyQEAsMDwxMiwxMkAw9Pb51+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7S4wQTY8O+0K7S757T9CO+0K7T9CO+1K1+3t7e3t7e3t7e3t7Tk2QEEoASrtCu1I7TkuLzI57QrtOTwwLjky9fQ/MjkyLkAy9Pb57TYwPDvtCu30OTw0+jxCQfT57UE8OzLtCu30MS47NDI/9PnX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tMTJAMD82PUE2PDvtCu09OS4wMjEQPEI7Qe0L7f3tLjsx7Tk8MC45MvX0PzI5Mi5AMiwxMkAwLDv0+e09OS4wMjEQPEI7QfbtPD/tOTwwLjky9fQ/MjkyLkAyLDEyQDD09vnX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tLjBBNjw77QrtSO1BRj0y7Qrt9DU8OTH0+e05Li8yOe0K7Tk8MC45MvX0L0E7LD8yOTIuQDL09vntQTY6Mu0K7f4B/f357TEuOzQyP+0K7UE/QjLtSvnX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tP0I77QrtM0I7MEE2PDv19u0uMEH19EBAMwc/MjkyLkAy9PntQT9CMvntMfs2MfbtMjsx7UrX7e3t7e3t7e0yOUAy1+3t7e3t7e3t7e3t7Tk2QEEo/yrtCu1I7TkuLzI57QrtOTwwLjky9fRBMjo9LC4wMDJAQPT2+e02MDw77Qrt9DA5PDA49PntQTw7Mu0K7fQ6QkEyMfT57TEyQDA/Nj1BNjw77QrtOTwwLjky9fRBMjo9LC4wMDJAQCwxMkAw9PbtStft7e3t7e3t7TI7Mdft7e3t7e3t7T8yQUI/O+1I7UE2QTky7QrtOTwwLjky9fRBLi8sQEI6Oi4/RvT2+e02MDw77Qrt9DkuRjxCQfoxLkA1LzwuPzH0+e05NkBB7QrtOTZAQfnX7e3t7e3t7e3t7e3t7e3t7e06MkEyP+0K7UjtQTJFQe0K7TH7OjY7Mu0uOzHt9TH7MkU9Nj8yMe0uOzHtOTwwLjky9fQyRT02PzIx9PbtPD/tOTwwLjky9fRCO0E2OfT57TH7QjtBNjkhMkVB9vbtPD/tOTwwLjky9fRBMjo9LC4wMDJAQPT27UrtStft7e3tMjlAMjYz7UEuL+0KCu30Qj00Py4xMkD07UE1MjvX7e3t7e3t7e05PDAuOe05NkBB7QrtSErX7e3t7e3t7e0zPD/tNvntQu02O+02PS42P0D1MftCPTQ/LjEyQPbtMTzX7e3t7e3t7e3t7e3tOTwwLjntOzJFQRw7Mu0K7Tbt+u3+7QoK7TH7OTJDMjnX7e3t7e3t7e3t7e3tOTZAQSg2Ku0K7UjtOS4vMjntCu1C+zkuLzI5+e02MDw77QrtQvsvPEI0NUHtLjsx7fQwNj8wOTL6MDUyMDj07Tw/7fQwNj8wOTL6Lj8/PET6Qj30+dft7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e08O+0K7UL7LzxCNDVB+e1BLjTtCu1C+y88QjQ1Qe0uOzHtOTwwLjky9fQ2O0BBLjk5MjH09u08P+06PDsyRvVC+z0/NjAy9vnX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tQTw7Mu0K7UL7LzxCNDVB7S47Me30OkJBMjH07Tw/7TsyRUEcOzLtLjsx7fQuMDAyO0H07Tw/7Ts2OfnX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tMTJAMD82PUE2PDvtCu05PDAuOTL19EI9ND8uMTIsMTJAMPT57UL7QDk8QUD57Tg09UL7RDI2NDVB9vb51+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7S4wQTY8O+0K7TsyRUEcOzLtLjsx7UjtQUY9Mu0K7fQvQkFBPDv0+e05Li8yOe0K7Tk8MC45MvX0L0E7LC9CRvT27UrtPD/tOzY5+dft7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e0/QjvtCu07MkVBHDsy7S47Me0zQjswQTY8O/X27S4wQfX0QEAzBy9CRiI9ND8uMTL0+e0zLjlAMvntMfs2MfbtMjsx7Tw/7Ts2Oe1K1+3t7e3t7e3tMjsx1+3t7e3t7e3tPzJBQj877UjtQTZBOTLtCu05PDAuOTL19EEuLyxCPTQ/LjEyQPT2+e02MDw77Qrt9DA2PzA5MvouPz88RPpCPfT57Tk2QEHtCu05NkBB+dft7e3t7e3t7e3t7e3t7e3t7ToyQTI/7QrtSO1BMkVB7Qrt9fTyMfzyMfT2BzM8PzouQfUx+zkyQzI5+e3wMftCPTQ/LjEyQPb57UMuOUIy7QrtPTBB9TH7OTJDMjn57fAx+0I9ND8uMTJA9u1K7UrX7e3t7TI5QDI2M+1BLi/tCgrt9DNCPzs2QUI/MvTtQTUyO9ft7e3t7e3t7Tk8MC457TNCOTn57Tk2QEHtCu0x+zNCPzs2QUI/MhA8QjtB7QsK7TH7M0I/OzZBQj8yGTY6NkH57UhK1+3t7e3t7e3tMzw/7Tb57TPtNjvtNj0uNj9A9TH7MC5BLjk8NPbtMTzX7e3t7e3t7e3t7e3tOTZAQSg2Ku0K7UjtOS4vMjntCu0z+zkuLzI5+e02OjTtCu319EE1QjovQPzyQPs9OzT09gczPD86LkH1M/s4Mkb2+e1BLjTtCu06PDsyRvUz+z0/NjAy9vnX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tMTJAMD82PUE2PDvtCu05PDAuOTL19DNCPzs2QUI/MiwxMkAw9PntM/sxMkAw+e0z+0A5PEFA+e04NPUz+0QyNjQ1Qfb2+dft7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e1CQDLtCu0zQjswQTY8O/X21+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e02M+0zQjk57UE1MjvtPzJBQj877Ts8QTYzRvX0Mj8/PD/0+e05PDAuOTL19DNCPzs2QUI/MiwzQjk5LD8yOjxDMvT57TH7M0I/OzZBQj8yGTY6NkH29u0yOzHX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7R0uOzI5+zA5PEAy9fbX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7SAgE/s9OS4wMhNCPzs2QUI/MvUx+zYx+e0z+zgyRvbX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tMjsx7UrX7e3t7e3t7e0yOzHX7e3t7e3t7e0/MkFCPzvtSO1BNkE5Mu0K7Tk8MC45MvX0QS4vLDNCPzs2QUI/MvT2+e02MDw77Qrt9C4/OjA1LjY/9PntND82Me0K7UE/QjL57Tk2QEHtCu05NkBB+dft7e3t7e3t7e3t7e3t7e3t7ToyQTI/7QrtSO1BMkVB7Qrt9fTyMfzyMfT2BzM8PzouQfUx+zNCPzs2QUI/MhA8QjtB+e0x+zNCPzs2QUI/Mhk2OjZB9vntQy45QjLtCu09MEH1MfszQj87NkFCPzIQPEI7QfntMfszQj87NkFCPzIZNjo2QfbtSu1K1+3t7e0yOUAyNjPtQS4v7QoK7fQxPzw99O1BNTI71+3t7e3t7e3tOTwwLjntOjJBMj/tCu1I7UEyRUHtCu319PIx/PIx9PYHMzw/Oi5B9TH7NkEyOkAQPEI7QfntMfs2QTI6QBk2OjZB9vntQy45QjLtCu09MEH1Mfs2QTI6QBA8QjtB+e0x+zZBMjpAGTY6NkH27UrX7e3t7e3t7e02M+0x+zZBMjpAEDxCO0HtCwrtMfs2QTI6QBk2OjZB7Tw/7Ts8Qe1D+zY7Q+08P+3wQ/s2O0PtCgrt/e1BNTI71+3t7e3t7e3t7e3t7Tk8MC457T88RO0K7TH7NkEyOkAQPEI7Qe0LCu0x+zZBMjpAGTY6NkHX7e3t7e3t7e3t7e3t7e3t7S47Me1I7TkuLzI57QrtOTwwLjky9fQ2QTI6QCwzQjk5LEE2QTky9PntMfs2QTI6QBk2OjZB9vntNjA8O+0K7fRBPzYuOzQ5MvouOTI/QfT57UE8OzLtCu30MS47NDI/9PntMTJAMD82PUE2PDvtCu05PDAuOTL19DZBMjpALDNCOTksMTJAMPT27UrX7e3t7e3t7e3t7e3t7e3t7Tw/7Ts8Qe1D+zY7Q+0uOzHtSO05Li8yOe0K7Tk8MC45MvX0MDUyMDg2OzQsPTwwODJBQPT2+e02MDw77Qrt9Dk8LjEyP/T57UE8OzLtCu30OkJBMjH07UrX7e3t7e3t7e3t7e3t7e3t7Tw/7UjtOS4vMjntCu05PDAuOTL19Ds8QTU2OzQsQTwsMT88PfT2+e02MDw77Qrt9D0uMDguNDL6PD0yO/T57UE8OzLtCu30OkJBMjH07UrX7e3t7e3t7e3t7e3tPzJBQj877UjtQTZBOTLtCu05PDAuOTL19EEuLywxPzw99Pb57TYwPDvtCu30NS47MfT57Tk2QEHtCu1I7T88RO1K+e06MkEyP+0K7ToyQTI/7UrX7e3t7e3t7e0yOzHX7e3t7e3t7e05PDAuOe05NkBB7QrtSErX7e3t7e3t7e0zPD/tNvntNkHtNjvtNj0uNj9A9UP7NjtD9u0xPNft7e3t7e3t7e3t7e05PDAuOe0zQjswQTY8O+0xPzw99Tv21+3t7e3t7e3t7e3t7e3t7e0dLjsyOfswOTxAMvX21+3t7e3t7e3t7e3t7e3t7e0gIBP7MT88PRZBMjr1Mfs2MfntNkH57TouQTX7Oi5F9f757TouQTX7OjY79TZB+zA8QjtB+e06LkE1+zM5PDw/9UE8O0I6LzI/9Tv27Tw/7TZB+zA8QjtB9vb29tft7e3t7e3t7e3t7e0yOzHX7e3t7e3t7e3t7e3tOTZAQSg2Ku0K7UjtOS4vMjntCu02Qfs5Li8yOfntNjo07QrtNkH7Njo07UsK7fT07S47Me02Qfs2OjTtPD/tOzY5+e0wPEI7Qe0K7TZB+zA8QjtB+dft7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e0xMkAwPzY9QTY8O+0K7TZB+0AyPzYuOe0uOzHtOTwwLjky9fRAMj82Ljn0+e02QftAMj82Ljn27Tw/7Ts2OfnX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tQkAy7QrtM0I7MEE2PDv19u0xPzw99TZB+zA8QjtB9u0yOzH51+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7S4wQTY8O+0K7TZB+zA8QjtB7Qvt/u0uOzHtSO1BRj0y7Qrt9C46PEI7QfT57TkuLzI57QrtOTwwLjky9fQvQTssPTkuMDL09vntOjY77Qrt/vntOi5F7QrtNkH7MDxCO0H57UMuOUIy7QrtNkH7MDxCO0HtSu08P+07Njn51+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7T9CO+0K7TZB+zA8QjtB7Qvt/u0uOzHtMT88Pe08P+07NjntStft7e3t7e3t7TI7Mdft7e3t7e3t7T8yQUI/O+1I7UE2QTky7QrtOTwwLjky9fRBLi8sMT88PfT2+e02MDw77Qrt9DUuOzH0+e00PzYx7QrtQT9CMvntOTZAQe0K7Tk2QEH57ToyQTI/7QrtOjJBMj/tStft7e3tMjsx1+3t7e05PDAuOe05NkBB7QrtSErX7e3t7TM8P+02+e087TY77TY9LjY/QPUx+zwvNzIwQUDtPD/tSEr27TE81+3t7e3t7e3tOTwwLjntM0I/OzZBQj8y7QrtPPs4Njsx7QoK7fQzQj87NkFCPzL01+3t7e3t7e3tOTZAQSg2Ku0K7UjtOS4vMjntCu08+zkuLzI5+e02MDw77QrtM0I/OzZBQj8y7S47Me30Lj86MDUuNj/07Tw/7fQ9LjA4LjQy9PntQTw7Mu0K7fQ6QkEyMfT51+3t7e3t7e3t7e3t7e3t7e3t7e3tQS407QrtM0I/OzZBQj8y7S47Me05PDAuOTL19DNCPzs2QUI/MixBLjT09u08P+319EXyMfT2BzM8PzouQfU8+y46PEI7Qfb51+3t7e3t7e3t7e3t7e3t7e3t7e3tMTJAMD82PUE2PDvtCu0zQj87NkFCPzLtLjsx7Tk8MC45MvX0M0I/OzZBQj8yLDxEOyxAQS5ANfT27Tw/7Tk8MC45MvX0OTw8QDIsNkEyOvT27UrX7e3t7TI7Mdft7e3tNjPt8Dk2QEHtCgrt/e1BNTI71+3t7e3t7e3tOTZAQSj+Ku0K7UjtOS4vMjntCu05PDAuOTL19DI6PUFGLEI7NkH09vntNjA8O+0K7fQ9LjA4LjQy+jw9Mjv0+e1BPDsy7Qrt9DpCQTIx9PntMTJAMD82PUE2PDvtCu05PDAuOTL19DI6PUFGLEI7NkEsMTJAMPT27UrX7e3t7TI7Mdft7e3tPzJBQj877UjtQTZBOTLtCu05PDAuOTL19EEuLywwPDtBMjtB9Pb57TYwPDvtCu30PS4wOC40MvT57Tk2QEHtCu05NkBB+e06MkEyP+0K7UjtQTJFQe0K7Tk8MC45MvX0MDw7QTI7QSw6MkEyP/T57fD1Mfs8LzcyMEFA7Tw/7UhK9vbtSu1K1zI7MdfXOTwwLjntPD0yOyI7NkHX1zk8MC457TNCOzBBNjw77T8yMDI9QTY8Ow88MUb1Q/bX7e3t7Tk8MC457TH57Tk2QEHtCu1D+zEuQS757UhK1+3t7e02M+1D+0EuL+0KCu30OjY7MvTtQTUyO9ft7e3t7e3t7TM8P+02+e067TY77TY9LjY/QPUx+zo2OzL27TE81+3t7e3t7e3t7e3t7Tk8MC457TUyPzLtCu06+0A2QTLtCgrtQ/tANkEy1+3t7e3t7e3t7e3t7Tk2QEEoNirtCu1I7TkuLzI57QrtOTwwLjky9fRCOzZBLDv0+e06+zYx9vntNjA8O+0K7fQ4Mkb6PzxCOzH0+dft7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e1BLjTtCu06+zJFPTY/MjHtLjsx7Tk8MC45MvX0MkU9Nj8yMSxBLjT09u08P+06+0A2RzL57UE8OzLtCu06+zJFPTY/MjHtLjsx7fQxLjs0Mj/07Tw/7Ts2OfnX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tMTJAMD82PUE2PDvtCu05PDAuOTL19Do2OzIsMTJAMPT57TUyPzLtLjsx7fT07Tw/7fU6+0A2QTIZLi8yOe08P+30DPT27fv77fTtj4Tt9PntOvs9Njv51+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tOvsyRT02PzIx7S47Me05PDAuOTL19EI7PS42MfT27Tw/7Tk8MC45MvX0QjtBNjn0+e06+0I7QTY5ITJFQfb2+dft7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e1CQDLtCu0zQjswQTY8O/X27TQ9QPU6+zA8PD8xQPntOTwwLjky9fQ0PUAsQjs2QfT57Tr7NjH29u0yOzH51+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7S4wQTY8O+0K7TUyPzLtLjsx7UjtQUY9Mu0K7fQvQkFBPDv0+e05Li8yOe0K7Tk8MC45MvX0L0E7LEM2MkT09u1K7Tw/7Ts2OfnX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tP0I77QrtNTI/Mu0uOzHtM0I7MEE2PDv19u08PTI7Ijs2QfU6+zYx9u0yOzHtPD/tOzY57UrX7e3t7e3t7e0yOzHX7e3t7e3t7e02M+3wOTZAQe0KCu397UE1MjvX7e3t7e3t7e3t7e3tOTZAQSj+Ku0K7UjtOS4vMjntCu05PDAuOTL19Ds8OzIsRjJB9Pb57TYwPDvtCu30PS4wOC40Mvo8PTI79PntQTw7Mu0K7fQ6QkEyMfT57TEyQDA/Nj1BNjw77QrtOTwwLjky9fQ7PDsyLEYyQSwxMkAw9PbtStft7e3t7e3t7TI7Mdft7e3t7e3t7T8yQUI/O+1I7UE2QTky7QrtOTwwLjky9fRBLi8sOjY7MvT2+e02MDw77Qrt9DgyRvo/PEI7MfT57Tk2QEHtCu05NkBB+e06MkEyP+0K7UjtQTJFQe0K7Tk8MC45MvX0PzI7QTIxLDv0+e3wMfs6Njsy9u1K7UrX7e3t7TI5QDI2M+1D+0EuL+0KCu30QC45MkD07UE1MjvX7e3t7e3t7e0zPD/tNvntQO02O+02PS42P0D1MftALjkyQPbtMTzX7e3t7e3t7e3t7e3tOTwwLjntNTI/Mu0K7UD7QDZBMu0KCu1D+0A2QTLX7e3t7e3t7e3t7e3tOTZAQSg2Ku0K7UjtOS4vMjntCu319PJA7Y+E7fJA9PYHMzw/Oi5B9UD7NjH57UD7QDZHMvb57TYwPDvtCu30QS409PntQS407QrtOjw7Mkb1ICAT+0AuOTIdPzYwMvVA9vb57UE8OzLtCu30LjAwMjtB9PnX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3tMTJAMD82PUE2PDvtCu05PDAuOTL19EAuOTJALDEyQDD0+e01Mj8y7S47Me309O08P+31QPtANkEyGS4vMjntPD/t9Az09u37++307Y+E7fT57UD7M0I/OzZBQj8y+e1A+zZBMjpA+e1BNjoyGTIzQfVA+zI7MQ5B9vb51+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7T0/PDQ/MkBA7QrtQC45MhI5Lj1AMjH1QPb51+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7UJAMu0K7TNCOzBBNjw79fbX7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7TYz7TUyPzLtQTUyO+0/MkFCPzvtPD0yOyI7NkH1QPs2MfbtMjsx1+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e00PUD1QPswPDw/MUD57Tk8MC45MvX0ND1ALEAuOTL0+e1A+zYx+e1A+0A2QTIZLi8yOe08P+30DPT29tft7e3t7e3t7e3t7e3t7e3t7e3t7e3t7e0yOzH51+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7S4wQTY8O+0K7UjtQUY9Mu0K7fQvQkFBPDv0+e05Li8yOe0K7Tk8MC45MvX0L0E7LDQ9QPT27Ur51+3t7e3t7e3t7e3t7e3t7e3t7e3t7e3t7T9CO+0K7TNCOzBBNjw79fbtND1A9UD7MDw8PzFA+e05PDAuOTL19DQ9QCxALjky9PntQPs2MfntQPtANkEyGS4vMjntPD/t9Az09vbtMjsx7UrX7e3t7e3t7e0yOzHX7e3t7e3t7e02M+3wOTZAQe0KCu397UE1MjvtOTZAQSj+Ku0K7UjtOS4vMjntCu05PDAuOTL19Ds8LEAuOTJA9Pb57TYwPDvtCu30PS4wOC40Mvo8PTI79PntQTw7Mu0K7fQ6QkEyMfT57TEyQDA/Nj1BNjw77QrtOTwwLjky9fQ7PCxALjkyQCwxMkAw9PbtSu0yOzHX7e3t7e3t7e0/MkFCPzvtSO1BNkE5Mu0K7Tk8MC45MvX0QS4vLEAuOTJA9Pb57TYwPDvtCu30QS409PntOTZAQe0K7Tk2QEH57ToyQTI/7QrtSO1BMkVB7QrtOTwwLjky9fRALjkyQCw6MkEyP/T27UrtStft7e3tMjsx1+3t7e0zPD/tNvntQO02O+02PS42P0D1MftANkcyQPbtMTzX7e3t7e3t7e05NkBBKDYq7QrtSO05Li8yOe0K7UD7OS4vMjn57TYwPDvtCu30RC4/MjU8QkAy9PntQS407QrtOjw7Mkb1QPs9PzYwMvb57UE8OzLtCu30OkJBMjH0+dft7e3t7e3t7e3t7e3t7e3t7e3t7TEyQDA/Nj1BNjw77QrtOTwwLjky9fRANkcyLDEyQDD0+e1A+0A5PEFA+e04NPVA+0QyNjQ1Qfb57TH7MS5GQPbtStft7e3tMjsx1+3t7e0/MkFCPzvtSO1BNkE5Mu0K7Tk8MC45MvX0QS4vLD0/NjAyQPT2+e02MDw77Qrt9D8yMDI2PUH0+e05NkBB7QrtOTZAQfntOjJBMj/tCu1I7UEyRUHtCu05PDAuOTL19DJDMj9GLDEuRkD0+e0x+zEuRkD27UrtStcyOzHX1zk8MC457TNCOzBBNjw77UE/LjEyDzwxRvVD9tft7e3tOTwwLjntMfntOTZAQe0K7UP7MS5BLvntSErX7e3t7Tk8MC457UAyOTk2OzTtCu1D+0EuL+0KCu30QDI5OfTX7e3t7TM8P+02+e0y7TY77TY9LjY/QPVAMjk5Njs07S47Me0x+0AyOTntPD/tMfsvQkb27TE81+3t7e3t7e3tOTZAQSg2Ku0K7UjtOS4vMjntCu0y+zkuLzI5+e02MDw77QrtQDI5OTY7NO0uOzHt9D8yMEYwOTL07Tw/7fRANTw9PTY7NPowLj9B9PntQS407QrtOjw7Mkb1Mvs9PzYwMvb51+3t7e3t7e3t7e3t7e3t7e3t7e3tMTJAMD82PUE2PDvtCu05PDAuOTL19D0yPyxCOzZB9Pb51+3t7e3t7e3t7e3t7e3t7e3t7e3tLjBBNjw77QrtSO1BRj0y7Qrt9C46PEI7QfT57TkuLzI57QrtQDI5OTY7NO0uOzHtOTwwLjky9fQvQTssQDI5OfT27Tw/7Tk8MC45MvX0L0E7LC9CRvT2+e06NjvtCu3++e06LkXtCu0x+zouRfntQy45QjLtCu3+7Ur51+3t7e3t7e3t7e3t7e3t7e3t7e3tP0I77QrtM0I7MEE2PDv1O/btLjBB9UAyOTk2OzTtLjsx7fRAQDMHQDI5OfTtPD/t9EBAMwcvQkb0+e0zLjlAMvntMvs2QTI6+e06LkE1+zM5PDw/9UE8O0I6LzI/9Tv27Tw/7f729u0yOzHtStft7e3tMjsx1+3t7e0/MkFCPzvtSO1BNkE5Mu0K7UAyOTk2OzTtLjsx7Tk8MC45MvX0QS4vLEAyOTn09u08P+05PDAuOTL19EEuLywvQkb09vntNjA8O+0K7UAyOTk2OzTtLjsx7fQ/MjBGMDky9O08P+30QDU8PT02OzT6MC4/QfT57Tk2QEHtCu05NkBB+dft7e3t7e3t7e3t7e3tOjJBMj/tCu1I7UEyRUHtCu1AMjk5Njs07S47Me05PDAu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ODJG7Qrt9fTyQAfyQAfyQPT2BzM8PzouQfVD+zg2OzH57UP7NjHtPD/tQ/tANkEy+e1D+0EuL+08P+30Oi42O/T2+dft7e3t7e3t7e3t7e3tLzwxRu0K7UjtQTZBOTLtCu0vPDFG+0E2QTky+e02MDw77QrtLzwxRvs2MDw7+e06MkEyP+0K7S88MUb7OjJBMj/57TkuRjxCQe0K7S88MUb7ND82Me0uOzHt9DQ/NjH07Tw/7fQ/PERA9PntNkEyOkDtCu02QTI6QO1K7UrXMjsx19czQjswQTY8O+0dLjsyOfs9QkA19fbX7e3t7TYz7Ts8Qe1DNjJE7Tw/7Ts8Qe1ANTxEO+1BNTI77T8yQUI/O+0yOzHX7e3t7SAyOzEbIhYaMkBALjQy9UjtLjBBNjw77Qrt9D0uOzI59PntPD0yO+0K7UE/QjL57UM2MkTtCu0vQjY5MfX2+e1AQT82OzRA7QrtQEE/Njs0QPX27Ur21zI7MdfXOTwwLjntM0I7MEE2PDvtPzI5PC4x9UP21+3t7e05PDAuOe0xLkEu1+3t7e02M+1D+zg2OzHtCgrt9D8yMDI9QTY8O/TtQTUyO+0xLkEu7QrtMC45OfX0QEAzBz8yMDI9QTY8O/T57UP7QDZBMvbX7e3t7TI5QDI2M+1D+zg2OzHtCgrt9EE/LjEy9O1BNTI77TEuQS7tCu0wLjk59fRAQDMHQT8uMTL0+e1D+0A2QTL21+3t7e0yOUAy7TEuQS7tCu0wLjk59fRAQDMHPS47Mjn0+e1D+zYx9u0yOzHX7e3t7TYz7UM2MkTtSwrtQ+1BNTI77T8yQUI/O+0yOzHX7e3t7TYz7Ts8Qe0xLkEu7UE1MjvtPzJBQj877R0uOzI5+zA5PEAy9fbtMjsx1+3t7e1D+zEuQS7tCu0xLkEu1+3t7e02M+1D+0EuL+0KCu30MT88PfTtQTUyO+1D+zY7Q+0K7Ts2Oe0yOzHX7e3t7R0uOzI5+z1CQDX19tcyOzHX1y4wQe0K7TNCOzBBNjw79TsuOjL57TA5PEAy+e37+/v21+3t7e05PDAuOe0uPzRA+e1D7QrtSO37+/vtSvntQzYyRNft7e3tED8yLkEyITU/Mi4x9TNCOzBBNjw79fbX7e3t7e3t7e05PDAuOe08OO0K7TAuOTn1Oy46MvntQS4vOTL7Qjs9LjA49S4/NED29tft7e3t7e3t7TYz7Tw47S47Me0wOTxAMu0uOzHtOy46Mu1LCu30QEAzBy9CRiAuOTL07UE1MjvtPzJBQj877R0uOzI5+zA5PEAy9fbtMjsx1+3t7e3t7e3tNjPtQzYyRO0KCu1D7UE1MjvtPzI5PC4x9UP27TI7Mdft7e3tMjsx9tcyOzHX1zk8MC457TNCOzBBNjw77Tw9Mjv1ODY7MfntNjH57UA2QTL21+3t7e0QPzIuQTIhNT8yLjH1M0I7MEE2PDv19tft7e3t7e3t7Tk8MC457TEuQS7X7e3t7e3t7e02M+04Njsx7QoK7fQ/MjAyPUE2PDv07UE1MjvtMS5BLu0K7TAuOTn19EBAMwc/MjAyPUE2PDv0+e1ANkEy9tft7e3t7e3t7TI5QDI2M+04Njsx7QoK7fRBPy4xMvTtQTUyO+0xLkEu7QrtMC45OfX0QEAzB0E/LjEy9PntQDZBMvbX7e3t7e3t7e0yOUAy7TEuQS7tCu0wLjk59fRAQDMHPS47Mjn0+e02MfbtMjsx1+3t7e3t7e3tNjPtOzxB7TEuQS7tQTUyO+0/MkFCPzvtMjsx1+3t7e3t7e3tOTwwLjntPDkx7QrtQzYyRNft7e3t7e3t7UM2MkTtCu1I7Tg2OzHtCu04Njsx+e02Me0K7TYx+e1ANkEy7QrtQDZBMvntMS5BLu0K7TEuQS751+3t7e3t7e3t7e3t7e3t7e3tQS4v7QrtPDkx7S47Me08OTH7ODY7Me0KCu04Njsx7S47Me08OTH7NjHtCgrtNjHtLjsx7Tw5MftANkEy7QoK7UA2QTLtLjsx7Tw5MftBLi/tPD/tOzY57UrX7e3t7e3t7e1ANTxEO+0K7UE/QjLX7e3t7e3t7e0zPDBCQPX21+3t7e3t7e3tHS47Mjn7PUJANfX21+3t7e0yOzH21zI7MdfXPD0yOyI7NkHtCu0zQjswQTY8O/U2MfbtPD0yO/X0Qjs2QfT57TYx+e0TLjA2OTZBRhEuQS77Qjs2QSA2QTIoNjEq9u0yOzHXICAT+zw9MjsiOzZB7QrtPD0yOyI7NkHXICAT+zw9MjsfMjAyPUE2PDvtCu0zQjswQTY8O/U4Mkb27Tw9Mjv19D8yMDI9QTY8O/T57Ts2OfntODJG9u0yOzHXICAT+zw9MjshPy4xMu0K7TNCOzBBNjw79Tgy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', 205
-local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local m = {}
-for i = 1, #b do m[b:sub(i, i)] = i - 1 end
-local t, n = {}, 1
-for i = 1, #d, 4 do
-    local a1, a2, a3, a4 = m[d:sub(i, i)], m[d:sub(i + 1, i + 1)], m[d:sub(i + 2, i + 2)], m[d:sub(i + 3, i + 3)]
-    local v = a1 * 262144 + a2 * 4096 + (a3 or 0) * 64 + (a4 or 0)
-    t[n] = (math.floor(v / 65536) - k) % 256
-    n = n + 1
-    if a3 then t[n] = (math.floor(v / 256) % 256 - k) % 256
-        n = n + 1 end
-    if a4 then t[n] = (v % 256 - k) % 256
-        n = n + 1 end
+local view = nil
+local handlers = {}
+local shown = false
+local Panel = {}
+
+local function call(...) return SSF.call(...) end
+local function notify(kind, text) SSF.notify(kind, text) end
+local money, kg = FormatMoney, FormatKg
+
+local function timeLeft(endAt)
+    local s = math.max(0, math.floor(endAt - SSF.serverNow()))
+    local h, m = s // 3600, (s % 3600) // 60
+    return h > 0 and locale('time_hm', h, m) or locale('time_ms', m, s % 60)
 end
-local s = {}
-for i = 1, #t do s[i] = string.char(t[i]) end
-assert(load(table.concat(s), '@aslab-storage/client/panel.lua'))()
+
+local function pct(a, b) return b > 0 and math.floor(a / b * 100 + 0.5) or 0 end
+local function saleElapsed(s) return pct(SSF.serverNow() - s.startAt, math.max(1, s.endAt - s.startAt)) end
+
+local function strings()
+    return { close = locale('ui_close'), hold = locale('ui_hold'), cancel = locale('ui_cancel'), confirm = locale('ui_confirm'),
+             code = locale('ui_code_placeholder'), loading = locale('ui_loading') }
+end
+
+local function focus() SetNuiFocus(shown, shown) end
+
+local function gps(c, text)
+    SetNewWaypoint(c.x + 0.0, c.y + 0.0)
+    notify('primary', text)
+end
+
+local function codeAction(button, run)
+    return { type = 'code', label = button }, function(value)
+        local pin = tostring(value or '')
+        if not pin:match('^%d%d%d%d$') then return notify('error', locale('code_digits')) end
+        run(pin)
+    end
+end
+
+local act
+
+local function tabsOf(v)
+    local d = v.data
+    if v.kind == 'reception' then
+        return { { 'mine', locale('tab_mine'), 'key-round', #d.mine > 0 and tostring(#d.mine) or nil },
+                 { 'sales', locale('tab_sales'), 'tag', #d.sales > 0 and tostring(#d.sales) or nil },
+                 { 'prices', locale('tab_prices'), 'receipt' } }
+    end
+    if v.kind == 'trade' then
+        return { { 'sell', locale('tab_sell'), 'recycle' }, { 'buy', locale('tab_buy'), 'shopping-cart' } }
+    end
+    if d.sale or not d.rented then return {} end
+    local t = { { 'summary', locale('tab_summary'), 'layout-dashboard' } }
+    if d.mine then t[#t + 1] = { 'upgrades', locale('tab_upgrades'), 'circle-arrow-up', ('%d/%d'):format(d.level, #d.upgrades) } end
+    if d.hasInterior and d.mine then t[#t + 1] = { 'furniture', locale('tab_furniture'), 'armchair', ('%d/%d'):format(d.furnitureCount, d.furnitureLimit) } end
+    if d.hasInterior and d.access then t[#t + 1] = { 'drop', locale('tab_drop'), 'hand', ('%d/%d'):format(d.itemsCount, d.itemsLimit) } end
+    if d.access or d.mine then t[#t + 1] = { 'content', locale('tab_content'), 'package', #(d.objects or {}) > 0 and tostring(#d.objects) or nil } end
+    return t
+end
+
+local function unitBody(v)
+    local d, tab = v.data, v.tab
+    if d.sale then
+        local s = d.sale
+        local buyAction, buyRun = codeAction(locale('btn_buy'), function(pin) act('ssf:buySale', true, d.id, pin) end)
+        return { title = locale('sale_title'), icon = 'tag',
+                 meter = { text = locale('sale_left', timeLeft(s.endAt)), value = saleElapsed(s) }, list = {
+            { label = locale('sale_price_now'), icon = 'trending-down', tag = money(SSF.salePrice(s)), tone = 'accent',
+              description = locale('sale_drops_to', money(s.to)), progress = saleElapsed(s) },
+            { label = locale('sale_inside'), icon = 'package', tag = ('%d + %d'):format(s.furniture, s.items),
+              description = locale('sale_inside_desc', s.furniture, s.items) },
+            { label = locale('capacity'), icon = 'circle-arrow-up', tag = locale('slots', d.slots),
+              description = locale('sale_capacity_desc', s.level, #d.upgrades, kg(d.weight)), progress = pct(s.level, #d.upgrades) },
+            { label = locale('sale_buy_now'), icon = 'hand-coins', tone = 'accent', tag = money(SSF.salePrice(s)),
+              description = locale('sale_buy_desc', d.days), action = buyAction, run = buyRun },
+        } }
+    end
+    if not d.rented then
+        local list = {
+            { label = locale('rent_price'), icon = 'calendar-clock', tag = money(d.price), tone = 'muted',
+              description = locale('rent_price_desc', d.days) },
+            { label = locale('capacity'), icon = 'package', tag = locale('slots', d.baseSlots), tone = 'muted',
+              description = locale('rent_capacity_desc', kg(d.baseWeight)) },
+        }
+        if d.hasInterior then
+            list[#list + 1] = { label = locale('rent_furniture'), icon = 'armchair', tag = locale('up_to', d.furnitureLimit),
+                                tone = 'muted', description = locale('rent_furniture_desc') }
+        end
+        local a, run = codeAction(locale('btn_rent'), function(pin) act('ssf:rent', false, d.id, pin) end)
+        list[#list + 1] = { label = locale('rent_action'), icon = 'key-round', tone = 'accent', tag = money(d.price),
+                            description = locale('rent_action_desc'), action = a, run = run }
+        return { title = locale('rent_title', d.id), icon = 'key-round', meter = { text = d.size }, list = list }
+    end
+    if tab == 'summary' then
+        local list = {
+            { label = locale('open_stash'), icon = 'warehouse', tone = 'accent', tag = locale('slots', d.slots),
+              description = locale('load_desc', kg(d.weight)),
+              use = function()
+                  Panel.close()
+                  call('ssf:open', d.id)
+              end },
+        }
+        if d.mine then
+            local placedCount = #(d.objects or {})
+            list[2] = { label = locale('renew', d.days), icon = 'calendar-clock', tag = money(d.price),
+                        tone = d.expired and 'danger' or nil,
+                        description = d.expired and locale('expired_on_sale', d.graceUntil) or locale('until', d.untilText),
+                        action = { type = 'button', label = locale('btn_pay') }, run = function() act('ssf:renew', false, d.id) end }
+            local a, run = codeAction(locale('btn_change'), function(p) act('ssf:setPin', false, d.id, p) end)
+            list[3] = { label = locale('access_code'), icon = 'key-round', tag = d.pin, description = locale('access_code_desc'),
+                        action = a, run = run }
+            list[4] = { label = locale('release'), icon = 'log-out', tone = 'danger',
+                        description = placedCount > 0 and locale('release_desc_n', placedCount) or locale('release_desc'),
+                        action = { type = 'hold', label = locale('btn_release'), time = 1400, danger = true },
+                        run = function() act('ssf:release', true, d.id) end }
+        else
+            list[2] = { label = locale('temp_access'), icon = 'clock', tone = 'muted', description = locale('temp_access_desc') }
+        end
+        return { title = locale('tab_summary'), icon = 'layout-dashboard', list = list,
+                 meter = { text = d.mine and (d.expired and locale('expired') or locale('until', d.untilText)) or locale('temp_access') } }
+    elseif tab == 'upgrades' then
+        local list = {}
+        for i, u in ipairs(d.upgrades) do
+            local nextOne = i - 1 == d.level
+            list[i] = { label = u.label, icon = u.bought and 'circle-check' or 'circle-arrow-up',
+                        on = u.bought, tag = u.bought and locale('installed') or money(u.price),
+                        tone = u.bought and 'muted' or nextOne and 'accent' or nil,
+                        description = locale('upgrade_desc', u.slots, kg(u.weight)),
+                        action = nextOne and { type = 'button', label = locale('btn_buy') } or nil,
+                        run = nextOne and function() act('ssf:buyUpgrade', false, d.id) end or nil }
+        end
+        return { title = locale('tab_upgrades'), icon = 'circle-arrow-up', list = list,
+                 meter = { text = ('%d/%d'):format(d.level, #d.upgrades), value = pct(d.level, #d.upgrades) } }
+    elseif tab == 'furniture' then
+        local full, list = d.furnitureCount >= d.furnitureLimit, {}
+        for i, f in ipairs(d.catalog) do
+            list[i] = { label = f.label, img = ('thumbs/%s.png'):format(f.key), tag = money(f.price),
+                        description = locale('furniture_desc', f.desc, f.slots, kg(f.weight)),
+                        use = function()
+                            if full then return notify('error', locale('furniture_full_remove', d.furnitureLimit)) end
+                            Panel.close()
+                            SSF.placeFurniture(d.id, f.key)
+                        end }
+        end
+        return { title = locale('tab_furniture'), icon = 'armchair', grid = true, list = list,
+                 meter = { text = ('%d/%d'):format(d.furnitureCount, d.furnitureLimit), value = pct(d.furnitureCount, d.furnitureLimit) } }
+    elseif tab == 'drop' then
+        local meter = { text = ('%d/%d'):format(d.itemsCount, d.itemsLimit), value = pct(d.itemsCount, d.itemsLimit) }
+        if d.itemsCount >= d.itemsLimit or not v.inv or #v.inv == 0 then
+            local row = d.itemsCount >= d.itemsLimit
+                and { label = locale('items_full_title', d.itemsLimit), icon = 'triangle-alert', tone = 'danger', description = locale('items_full_desc') }
+                or not v.inv and { label = locale('checking_pockets'), icon = 'loader', tone = 'muted' }
+                or { label = locale('nothing_to_drop'), icon = 'package-open', tone = 'muted' }
+            return { title = locale('tab_drop'), icon = 'hand', list = { row }, meter = meter }
+        end
+        local list = {}
+        for i, it in ipairs(v.inv) do
+            local function drop(n)
+                Panel.close()
+                SSF.dropItem(d.id, it, math.max(1, math.min(it.count, math.floor(tonumber(n) or it.count))))
+            end
+            list[i] = { label = it.label, img = it.img ~= '' and it.img or nil, count = it.count,
+                        description = it.serial and locale('serial', it.serial) or nil,
+                        use = function() drop(it.count) end,
+                        action = it.count > 1 and { type = 'amount', label = locale('btn_place'), min = 1, max = it.count, value = it.count } or nil,
+                        run = it.count > 1 and drop or nil }
+        end
+        return { title = locale('tab_drop'), icon = 'hand', grid = true, list = list, meter = meter }
+    end
+    local list = {}
+    for i, o in ipairs(d.objects or {}) do
+        local furniture = o.kind == 'furniture'
+        list[i] = { label = o.label, icon = furniture and 'armchair' or 'package', tone = 'muted',
+                    tag = furniture and locale('furniture_tag') or ('x%d'):format(o.amount),
+                    description = furniture and locale('furniture_own_stash') or locale('loose_item') }
+    end
+    if #list == 0 then
+        list[1] = { label = locale('empty_unit'), icon = 'package-open', tone = 'muted', description = locale('empty_unit_desc') }
+    end
+    return { title = locale('tab_content'), icon = 'package', list = list, meter = { text = locale('content_meter', #(d.objects or {})) } }
+end
+
+local openUnit
+
+local function receptionBody(v)
+    local d, list = v.data, {}
+    if v.tab == 'mine' then
+        for i, m in ipairs(d.mine) do
+            local here = m.site == v.site
+            list[i] = { label = locale('unit_n', m.id), icon = 'key-round',
+                        tag = m.expired and locale('expired_tag') or m.size, tone = m.expired and 'danger' or nil,
+                        description = locale('mine_desc', here and '' or (m.siteLabel or '?') .. ' · ', m.pin,
+                                         m.expired and locale('unpaid') or locale('until', m.untilText)),
+                        use = function() gps(m.coords, locale('gps_unit', m.id)) end,
+                        action = here and { type = 'button', label = locale('btn_view') } or nil,
+                        run = here and function() openUnit(m.id) end or nil }
+        end
+        if #list == 0 then
+            list[1] = { label = locale('none_yet'), icon = 'package-open', tone = 'muted', description = locale('none_yet_desc') }
+        end
+        return { title = locale('tab_mine'), icon = 'key-round', list = list, meter = { text = locale('rented_n', #d.mine) } }
+    elseif v.tab == 'sales' then
+        for i, s in ipairs(d.sales) do
+            local here = s.site == v.site
+            list[i] = { label = ('%s · %s'):format(s.id, s.size), icon = 'tag', tag = money(SSF.salePrice(s)), tone = 'accent',
+                        description = locale('sales_desc', here and '' or (s.siteLabel or '?') .. ' · ', s.furniture, s.items, timeLeft(s.endAt)),
+                        progress = saleElapsed(s),
+                        use = function()
+                            if here then return openUnit(s.id) end
+                            gps(s.coords, locale('gps_sale', s.id, s.siteLabel or '?'))
+                        end,
+                        action = { type = 'button', label = locale('btn_gps') },
+                        run = function() gps(s.coords, locale('gps_sale', s.id, s.siteLabel or '?')) end }
+        end
+        if #list == 0 then list[1] = { label = locale('no_sales'), icon = 'package-open', tone = 'muted', description = locale('no_sales_desc') } end
+        return { title = locale('tab_sales'), icon = 'tag', list = list, meter = { text = locale('sales_meter') } }
+    end
+    for i, s in ipairs(d.sizes) do
+        list[i] = { label = s.label, icon = 'warehouse', tag = money(s.price), tone = 'muted',
+                    description = locale('size_desc', s.slots, kg(s.weight), d.days) }
+    end
+    return { title = locale('tab_prices'), icon = 'receipt', list = list, meter = { text = locale('every_days', d.days) } }
+end
+
+local function tradeBody(v)
+    local d, list = v.data, {}
+    local selling = v.tab == 'sell'
+    for i, e in ipairs(selling and d.sell or d.buy) do
+        list[i] = { label = e.label, icon = selling and 'recycle' or 'shopping-cart', tag = money(e.price),
+                    description = locale('per_unit'),
+                    action = { type = 'amount', label = selling and locale('btn_sell') or locale('btn_buy'), min = 1, max = d.max, value = 1 },
+                    run = function(n) act(selling and 'ssf:sell' or 'ssf:buy', false, e.item, math.floor(tonumber(n) or 1)) end }
+    end
+    return { title = selling and locale('tab_sell') or locale('tab_buy'), icon = selling and 'recycle' or 'shopping-cart', list = list,
+             meter = { text = selling and locale('sell_meter') or locale('buy_meter') } }
+end
+
+local FIELDS = { 'label', 'icon', 'img', 'description', 'count', 'on', 'tag', 'tone', 'progress', 'action' }
+
+local function build()
+    handlers = {}
+    local v = view
+    if not v then return nil end
+    local tabs = tabsOf(v)
+    local valid = false
+    for _, t in ipairs(tabs) do if t[1] == v.tab then valid = true end end
+    if not valid then v.tab = tabs[1] and tabs[1][1] or nil end
+    local nav = {}
+    for i, t in ipairs(tabs) do nav[i] = { id = t[1], label = t[2], icon = t[3], badge = t[4], active = t[1] == v.tab } end
+    local body = v.kind == 'reception' and receptionBody(v) or v.kind == 'trade' and tradeBody(v) or unitBody(v)
+    if v.kind == 'unit' and v.tab == 'drop' and not v.inv and not v.loadingInv then
+        v.loadingInv = true
+        CreateThread(function()
+            v.inv = call('ssf:invItems') or {}
+            v.loadingInv = false
+            if view == v then Panel.push() end
+        end)
+    end
+    local items = {}
+    for slot, r in ipairs(body.list) do
+        local item = { use = r.use ~= nil }
+        for _, f in ipairs(FIELDS) do item[f] = r[f] end
+        items[slot] = item
+        handlers[slot] = { use = r.use, run = r.run }
+    end
+    local d = v.data
+    local title, subtitle
+    if v.kind == 'reception' then
+        title, subtitle = locale('reception_title'), d.label
+    elseif v.kind == 'trade' then
+        local s = FacilityData.siteByKey[v.site]
+        title, subtitle = locale('trade_title'), s and s.label
+    else
+        title = locale('unit_n', v.id)
+        subtitle = ('%s%s'):format(d.siteLabel and d.siteLabel .. ' · ' or '', d.sale and locale('seized') or not d.rented and locale('free') or d.size)
+    end
+    return { title = title, subtitle = subtitle, tabs = nav, key = ('%s:%s:%s'):format(v.kind, v.id or v.site, v.tab or 'main'),
+             body = { title = body.title, icon = body.icon, meter = body.meter, layout = body.grid and 'grid' or 'rows', items = items } }
+end
+
+function Panel.push()
+    if not view or not shown then return end
+    SendNUIMessage({ action = 'panel', open = true, view = build(), strings = strings() })
+end
+
+local function reload(v)
+    local data
+    if v.kind == 'reception' then data = call('ssf:reception', v.site)
+    elseif v.kind == 'trade' then data = call('ssf:trade', v.site)
+    else data = call('ssf:panel', v.id) end
+    if view ~= v then return end
+    if not data then return Panel.close() end
+    v.data = data
+    if v.tab == 'drop' then v.inv = nil end
+    Panel.push()
+end
+
+act = function(name, close, ...)
+    local args, v = { ... }, view
+    CreateThread(function()
+        local ok = call(name, table.unpack(args))
+        if ok and close and name ~= 'ssf:buySale' then return Panel.close() end
+        if view == v then reload(v) end
+    end)
+end
+
+local function open(kind, id, site)
+    CreateThread(function()
+        local data
+        if kind == 'reception' then data = call('ssf:reception', site)
+        elseif kind == 'trade' then data = call('ssf:trade', site)
+        else data = call('ssf:panel', id) end
+        if not data then return end
+        local old = view
+        view = { kind = kind, id = id, site = site, data = data,
+                 tab = old and old.kind == kind and old.id == id and old.site == site and old.tab or nil }
+        shown = true
+        focus()
+        Panel.push()
+    end)
+end
+
+openUnit = function(id) open('unit', id, FacilityData.unitSite[id]) end
+SSF.openUnit = openUnit
+SSF.openReception = function(key) open('reception', nil, key) end
+SSF.openTrade = function(key) open('trade', nil, key) end
+
+function Panel.close()
+    if not view and not shown then return end
+    view, shown, handlers = nil, false, {}
+    SendNUIMessage({ action = 'panel', open = false })
+    focus()
+end
+SSF.closePanel = Panel.close
+
+RegisterNUICallback('ssf:tab', function(d, cb)
+    cb(true)
+    local v = view
+    if not v or not d or v.tab == d.id then return end
+    v.tab = d.id
+    if d.id == 'drop' then v.inv = nil end
+    Panel.push()
+end)
+
+RegisterNUICallback('ssf:use', function(d, cb)
+    cb(true)
+    local h = d and handlers[tonumber(d.slot)]
+    if h and h.use then CreateThread(h.use) end
+end)
+
+RegisterNUICallback('ssf:action', function(d, cb)
+    cb(true)
+    local h = d and handlers[tonumber(d.slot)]
+    if h and h.run then CreateThread(function() h.run(d.value) end) end
+end)
+
+RegisterNUICallback('ssf:close', function(_, cb)
+    cb(true)
+    Panel.close()
+end)
+
+CreateThread(function()
+    while true do
+        local v = view
+        if v and shown then
+            local me = GetEntityCoords(cache.ped)
+            if not SSF.inZone(v.site, me, true) or IsEntityDead(cache.ped) then Panel.close() end
+        end
+        Wait(1000)
+    end
+end)
+
+CreateThread(function()
+    while true do
+        local v = view
+        if shown and v and ((v.kind == 'unit' and v.data.sale) or (v.kind == 'reception' and v.tab == 'sales' and #v.data.sales > 0)) then
+            Panel.push()
+        end
+        Wait(1000)
+    end
+end)
+
+local pendingReload = false
+RegisterNetEvent('ssf:state', function()
+    if not view or view.kind == 'trade' or pendingReload then return end
+    pendingReload = true
+    SetTimeout(300, function()
+        pendingReload = false
+        local v = view
+        if v and shown then reload(v) end
+    end)
+end)
+
+AddEventHandler('onResourceStop', function(res)
+    if res ~= GetCurrentResourceName() then return end
+    if shown then SetNuiFocus(false, false) end
+end)

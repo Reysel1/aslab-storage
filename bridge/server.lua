@@ -1,18 +1,352 @@
-local d, k = '+ysiHSAe2fbZNDbDwyUoHBol2R8uJxwtIign2SsuJyciJyDhJxomHuLD2dnZ2SUoHBol2SzZ9tkAHi0LHiwoLiscHgwtGi0e4ScaJh7iw9nZ2dkrHi0uKyfZLNn29tngLC0aKy0eHeDZKCvZLNn29tngLC0aKy0iJyDgwx4nHcPDJSgcGiXZHy4nHC0iKCfZHR4tHhwt4SweLS0iJyDl2SUiLC3iw9nZ2dkiH9ksHi0tIicg2RonHdksHi0tIicg2Tf22eAaLi0o4NktIR4n2SseLS4rJ9ksHi0tIicg2R4nHcPZ2dnZHygr2Rjl2ScaJh7ZIifZIikaIiss4SUiLC3i2R0o2SIf2SsuJyciJyDhJxomHuLZLSEeJ9krHi0uKyfZJxomHtkeJx3ZHicdwx4nHcPDJSgcGiXZ/ysaJh4wKCskLNn22TQ2w8P/KxomHjAoKyQsFOAqG+YcKCse4BbZ9tkfLiccLSIoJ+Hiw9nZ2dklKBwaJdkK+9n22R4xKSgrLSwU4Cob5hwoKx7gFvMAHi38KCseCBsjHhwt4eLD2dnZ2SUoHBol2f/Z9tk0NsPZ2dnZJSgcGiXZHy4nHC0iKCfZIB4t4SwrHOLZKx4tLisn2Qr75/8uJxwtIignLOcAHi0JJRoyHivhLCsc4tkeJx3D2dnZ2R8uJxwtIign2f/nIh3hLCsc4tklKBwaJdkp2fbZIB4t4SwrHOLZKx4tLisn2SnZGicd2SnnCSUaMh4r/RotGuccIi0iMx4nIh3ZHicdw9nZ2dkfLiccLSIoJ9n/5ycaJh7hLCsc4sPZ2dnZ2dnZ2SUoHBol2SnZ9tkgHi3hLCsc4sPZ2dnZ2dnZ2SUoHBol2Rwi2fbZKdkaJx3ZKecJJRoyHiv9Gi0a5xwhGisiJx8o2Sgr2TQ2w9nZ2dnZ2dnZKx4tLisn2eHh4Rwi5x8iKywtJxomHtkoK9ng4OLZ5+fZ4Nng2efn2eEcIuclGiwtJxomHtkoK9ng4OLi8yAsLhvh4BfeLOTg5dng4OLiw9nZ2dkeJx3D2dnZ2R8uJxwtIign2f/nIygb4SwrHOLD2dnZ2dnZ2dklKBwaJdkp2fbZIB4t4SwrHOLD2dnZ2dnZ2dklKBwaJdkj2fbZKdkaJx3ZKecJJRoyHiv9Gi0a5yMoG9koK9k0NsPZ2dnZ2dnZ2SseLS4rJ9kj5ycaJh7l2S0oJy4mGx4r4S0yKR7hI+cgKxodHuLZ9vbZ4C0aGyUe4NkaJx3ZI+cgKxodHuclHi8eJdkoK9kj5yArGh0e4tkoK9np5dkj5ygnHS4tMtk39tkfGiUsHsPZ2dnZHicdw9nZ2dkfLiccLSIoJ9n/5ykaMuEsKxzl2RomKC4nLeXZKx4aLCgn4sPZ2dnZ2dnZ2SUoHBol2SnZ9tkgHi3hLCsc4sPZ2dnZ2dnZ2SIf2ScoLdkp2S0hHifZKx4tLisn2R8aJSwe2R4nHcPZ2dnZ2dnZ2SseLS4rJ9kp5/8uJxwtIignLOcLHiYoLx4GKCceMuHgGxonJODl2RomKC4nLeXZKx4aLCgn4tkoK9kp5/8uJxwtIignLOcLHiYoLx4GKCceMuHgHBosIeDl2RomKC4nLeXZKx4aLCgn4sPZ2dnZHicdw9nZ2dkfLiccLSIoJ9n/5yAiLx7hLCsc5dkaHBwoLict5dkaJiguJy3l2SseGiwoJ+LD2dnZ2dnZ2dklKBwaJdkp2fbZIB4t4SwrHOLD2dnZ2dnZ2dkrHi0uKyfZKdk39tknIiXZGicd2Snn/y4nHC0iKCcs5/odHQYoJx4y4RocHCguJy3l2RomKC4nLeXZKx4aLCgn4sPZ2dnZHicdw9nZ2dkfLiccLSIoJ9n/5ygnJSInHuEiHeLD2dnZ2dnZ2dklKBwaJdkp2fbZCvvn/y4nHC0iKCcs5wAeLQklGjIeK/sy/CItIjMeJwId4SId4sPZ2dnZ2dnZ2SseLS4rJ9kp2RonHdkp5wklGjIeK/0aLRrnLCguKxwew9nZ2dkeJx3D2dnZ2R8uJxwtIign2f/nHjEiLC0s4SwrHOLZKx4tLisn2SAeLeEsKxzi2Tf22SciJdkeJx3D2dnZ2R8uJxwtIign2f/nIi0eJizhLCsc4tklKBwaJdkp2fbZIB4t4SwrHOLZKx4tLisn2SnZGicd2SnnCSUaMh4r/RotGuciLR4mLNkoK9k0NtkeJx3D2dnZ2R8uJxwtIign2f/nIi0eJv0eH+EnGiYe4tkrHi0uKyfZCvvnDCEaKx4d5wItHiYsFCcaJh4W2Sgr2Qr75wwhGiseHecCLR4mLBQnGiYe8yUoMB4r4eIW2R4nHcPZ2dnZHy4nHC0iKCfZ/+coJwUoGh0eHeEcG+LZ+h0d/i8eJy0BGicdJR4r4eAK+/woKx7zDB4rLx4r8wklGjIeKwUoGh0eHeDl2R8uJxwtIign4Sni2Rwb4SnnCSUaMh4r/RotGucsKC4rHB7i2R4nHeLZHicdw9nZ2dkrHi0uKyfZ/8MeJx3Dw/8rGiYeMCgrJCwU4CobMRgcKCse4BbZ9tkfLiccLSIoJ+Hiw9nZ2dklKBwaJdkK2fbZHjEpKCstLOcqGzEYHCgrHsPZ2dnZJSgcGiXZ/9n22TQ2w9nZ2dklKBwaJdkfLiccLSIoJ9kgHi3hLCsc4tkrHi0uKyfZCvMAHi0JJRoyHivhLCsc4tkeJx3D2dnZ2R8uJxwtIign2f/nIh3hLCsc4tklKBwaJdkp2fbZIB4t4SwrHOLZKx4tLisn2SnZGicd2SnnCSUaMh4r/RotGuccIi0iMx4nIh3ZHicdw9nZ2dkfLiccLSIoJ9n/5ycaJh7hLCsc4sPZ2dnZ2dnZ2SUoHBol2SnZ9tkgHi3hLCsc4sPZ2dnZ2dnZ2SUoHBol2Rwi2fbZKdkaJx3ZKecJJRoyHiv9Gi0a5xwhGisiJx8o2Sgr2TQ2w9nZ2dnZ2dnZKx4tLisn2eHh4Rwi5x8iKywtJxomHtkoK9ng4OLZ5+fZ4Nng2efn2eEcIuclGiwtJxomHtkoK9ng4OLi8yAsLhvh4BfeLOTg5dng4OLiw9nZ2dkeJx3D2dnZ2R8uJxwtIign2f/nIygb4SwrHOLD2dnZ2dnZ2dklKBwaJdkp2fbZIB4t4SwrHOLD2dnZ2dnZ2dklKBwaJdkj2fbZKdkaJx3ZKecJJRoyHiv9Gi0a5yMoG9koK9k0NsPZ2dnZ2dnZ2SseLS4rJ9kj5ycaJh7l2S0oJy4mGx4r4S0yKR7hI+cgKxodHuLZ9vbZ4C0aGyUe4NkaJx3ZI+cgKxodHuclHi8eJdkoK9kj5yArGh0e4tkoK9np5dkj5ygnHS4tMtk39tkfGiUsHsPZ2dnZHicdw9nZ2dkfLiccLSIoJ9n/5ykaMuEsKxzl2RomKC4nLeXZKx4aLCgn4sPZ2dnZ2dnZ2SIf2ScoLdkgHi3hLCsc4tktIR4n2SseLS4rJ9kfGiUsHtkeJx3D2dnZ2dnZ2dkrHi0uKyfZCvMLHiYoLx4GKCceMuEsKxzl2eAbGick4OXZGiYoLict5dkrHhosKCfi2Sgr2QrzCx4mKC8eBignHjLhLCsc5dngHBosIeDl2RomKC4nLeXZKx4aLCgn4sPZ2dnZHicdw9nZ2dkfLiccLSIoJ9n/5yAiLx7hLCsc5dkaHBwoLict5dkaJiguJy3l2SseGiwoJ+LZKx4tLisn2Qrz+h0dBignHjLhLCsc5dkaHBwoLict5dkaJiguJy3l2SseGiwoJ+LZHicdw9nZ2dkfLiccLSIoJ9n/5ygnJSInHuEiHeLD2dnZ2dnZ2dklKBwaJdkp2fbZCvMAHi0JJRoyHiv7MvwiLSIzHicCHeEiHeLD2dnZ2dnZ2dkrHi0uKyfZKdkaJx3ZKecJJRoyHiv9Gi0a5ywoLiscHsPZ2dnZHicdw9nZ2dkfLiccLSIoJ9n/5x4xIiwtLOEsKxzi2SseLS4rJ9kgHi3hLCsc4tk39tknIiXZHicdw9nZ2dkfLiccLSIoJ9n/5yItHiYs4SwrHOLZJSgcGiXZKdn22SAeLeEsKxzi2SseLS4rJ9kp2RonHdkp5wklGjIeK/0aLRrnIi0eJizZKCvZNDbZHicdw9nZ2dkfLiccLSIoJ9n/5yItHib9Hh/h4tkrHi0uKyfZJyIl2R4nHcPZ2dnZHy4nHC0iKCfZ/+coJwUoGh0eHeEcG+LZ+h0d/i8eJy0BGicdJR4r4eAK+/woKx7zDB4rLx4r8wklGjIeKwUoGh0eHeDl2R8uJxwtIign4Sni2Rwb4SnnCSUaMh4r/RotGucsKC4rHB7i2R4nHeLZHicdw9nZ2dkrHi0uKyfZ/8MeJx3Dw/8rGiYeMCgrJCwU4B4sGB4xLR4nHR4d4BbZ9tkfLiccLSIoJ+Hiw9nZ2dklKBwaJdn+DBHZ9tkeMSkoKy0s5x4sGB4xLR4nHR4d8yAeLQwhGiseHQgbIx4cLeHiw9nZ2dklKBwaJdn/2fbZNDbD2dnZ2SUoHBol2R8uJxwtIign2SAeLeEsKxzi2SseLS4rJ9n+DBHnAB4tCSUaMh4r/ysoJgId4SwrHOLZHicdw9nZ2dkfLiccLSIoJ9n/5yId4SwrHOLZJSgcGiXZKdn22SAeLeEsKxzi2SseLS4rJ9kp2RonHdkp5yIdHictIh8iHivZHicdw9nZ2dkfLiccLSIoJ9n/5ycaJh7hLCsc4tklKBwaJdkp2fbZIB4t4SwrHOLZKx4tLisn2SnZGicd2SnnIB4tBxomHuHi2Sgr2eDg2R4nHcPZ2dnZHy4nHC0iKCfZ/+cjKBvhLCsc4sPZ2dnZ2dnZ2SUoHBol2SnZ9tkgHi3hLCsc4sPZ2dnZ2dnZ2SUoHBol2SPZ9tkp2RonHdkp5yAeLQMoG+Hi2Sgr2TQ2w9nZ2dnZ2dnZKx4tLisn2SPnJxomHuXZLSgnLiYbHivhI+cgKxodHuLZKCvZ6eXZI+coJ/0uLTLZN/bZHxolLB7D2dnZ2R4nHcPZ2dnZHy4nHC0iKCfZ/+cpGjLhLCsc5dkaJiguJy3l2SseGiwoJ+LD2dnZ2dnZ2dklKBwaJdkp2fbZIB4t4SwrHOLD2dnZ2dnZ2dkiH9knKC3ZKdktIR4n2SseLS4rJ9kfGiUsHtkeJx3D2dnZ2dnZ2dklKBwaJdkbGick2fbZKecgHi36HBwoLict4eAbGick4OLD2dnZ2dnZ2dkiH9kbGick2RonHdkbGick5yYoJx4y2ff22RomKC4nLdktIR4n2SnnKx4mKC8e+hwcKC4nLQYoJx4y4eAbGick4OXZGiYoLict5dkrHhosKCfi2SseLS4rJ9ktKy4e2R4nHcPZ2dnZ2dnZ2SIf2SnnIB4tBignHjLh4tn39tkaJiguJy3ZLSEeJ9kp5yseJigvHgYoJx4y4RomKC4nLeXZKx4aLCgn4tkrHi0uKyfZLSsuHtkeJx3D2dnZ2dnZ2dkrHi0uKyfZHxolLB7D2dnZ2R4nHcPZ2dnZHy4nHC0iKCfZ/+cgIi8e4SwrHOXZGhwcKC4nLeXZGiYoLict5dkrHhosKCfiw9nZ2dnZ2dnZJSgcGiXZKdn22SAeLeEsKxziw9nZ2dnZ2dnZIh/ZJygt2SnZLSEeJ9krHi0uKyfZHxolLB7ZHicdw9nZ2dnZ2dnZKecaHR36HBwoLictBignHjLhGhwcKC4nLdn29tngHBosIeDZGicd2eAmKCceMuDZKCvZGhwcKC4nLeXZGiYoLict5dkrHhosKCfiw9nZ2dnZ2dnZKx4tLisn2S0rLh7D2dnZ2R4nHcPZ2dnZHy4nHC0iKCfZ/+coJyUiJx7hIh3iw9nZ2dnZ2dnZJSgcGiXZKdn22f4MEecAHi0JJRoyHiv/KygmAh0eJy0iHyIeK+EiHeLD2dnZ2dnZ2dkrHi0uKyfZKdkaJx3ZKecsKC4rHB7D2dnZ2R4nHcPZ2dnZHy4nHC0iKCfZ/+ceMSIsLSzhLCsc4tkrHi0uKyfZIB4t4SwrHOLZN/bZJyIl2R4nHcPZ2dnZHy4nHC0iKCfZ/+ciLR4mLOEsKxzi2SUoHBol2SnZ9tkgHi3hLCsc4tkrHi0uKyfZKdkaJx3ZKecgHi0CJy8eJy0oKzLh4tkoK9k0NtkeJx3D2dnZ2R8uJxwtIign2f/nIi0eJv0eH+EnGiYe4tkrHi0uKyfZ/gwR5wItHiYs2RonHdn+DBHnAi0eJiwUJxomHhbZHicdw9nZ2dkfLiccLSIoJ9n/5ygnBSgaHR4d4Rwb4tn6HR3+Lx4nLQEaJx0lHivh4B4sMfMpJRoyHisFKBodHh3g5dkfLiccLSIoJ+EsKxzi2Rwb4SwrHOLZHicd4tkeJx3D2dnZ2SseLS4rJ9n/wx4nHcPDJSgcGiXZHy4nHC0iKCfZHCguJy3hHuLD2dnZ2SseLS4rJ9ktKCcuJhseK+Ee5xwoLict4tkoK9nhLTIpHuEe5xomKC4nLeLZ9vbZ4C0aGyUe4NkaJx3ZLSgnLiYbHivhHucaJiguJy3nGhwtLhol4uLZKCvZLSgnLiYbHivhHucaJiguJy3i2Sgr2enDHicdw8MlKBwaJdkfLiccLSIoJ9kiLBAeGikoJ+EnGiYe5dkdHh/iw9nZ2dkrHi0uKyfZ4R0eH9kaJx3Z4R0eH+ciLBAeGikoJ9koK9kdHh/nMB4aKSgn2Sgr2R0eH+ctMike2fb22eAwHhopKCfg4uLZGicd2S0rLh7ZKCvZJxomHvMlKDAeK+Hi8x8iJx3h4BcwHhopKCcY4OLZN/bZJyIlwx4nHcPDJSgcGiXZAicvHictKCsiHizZ9tk0NsPDAicvHictKCsiHiwU4CgxGCInLx4nLSgrMuAW2fbZHy4nHC0iKCfh4sPZ2dnZJSgcGiXZKDHZ9tkeMSkoKy0s5ygxGCInLx4nLSgrMsPZ2dnZJSgcGiXZAtn22TQ2w9nZ2dkfLiccLSIoJ9kC5yseICIsLR4r4SId5dklGhseJeXZLCUoLSzl2TAeIiAhLeLD2dnZ2dnZ2dkoMfMLHiAiLC0eKwwtGiwh4SId5dklGhseJeXZLCUoLSzl2TAeIiAhLeLD2dnZ2dnZ2dkpHBolJeEfLiccLSIoJ+Hi2Sgx8wweLQwlKC38KC4nLeEiHeXZLCUoLSzi2R4nHeLD2dnZ2dnZ2dkpHBolJeEfLiccLSIoJ+Hi2Sgx8wweLQYaMRAeIiAhLeEiHeXZMB4iICEt4tkeJx3iw9nZ2dkeJx3D2dnZ2R8uJxwtIign2QLnKCkeJ+EsKxzl2SId5dksJSgtLOXZMB4iICEt5dklGhseJeLD2dnZ2dnZ2dkC5yseICIsLR4r4SId5dklGhseJeXZLCUoLSzl2TAeIiAhLeLD2dnZ2dnZ2dkoMfMfKCscHggpHicCJy8eJy0oKzLhLCsc5dngLC0aLCHg5dkiHeLD2dnZ2dnZ2dkrHi0uKyfZLSsuHsPZ2dnZHicdw9nZ2dkfLiccLSIoJ9kC5ywtGiwh4SId4sPZ2dnZ2dnZ2SUoHBol2Sgk5dkiLR4mLNn22SkcGiUl4R8uJxwtIign4eLZKx4tLisn2Sgx8wAeLQInLx4nLSgrMgItHiYs4SId4tkeJx3iw9nZ2dnZ2dnZIh/ZJygt2Sgk2S0hHifZKx4tLisn2SciJdkeJx3D2dnZ2dnZ2dkrHi0uKyfZIi0eJizZKCvZNDbD2dnZ2R4nHcPZ2dnZHy4nHC0iKCfZAucdHh/hJxomHuLD2dnZ2dnZ2dklKBwaJdkd2fbZKDHzAi0eJizhJxomHuLZKCvZKDHzAi0eJizhJxomHvMlKDAeK+Hi4sPZ2dnZ2dnZ2SseLS4rJ9kd2RonHdk02SUaGx4l2fbZHeclGhseJeXZMB4aKSgn2fbZHecwHhopKCfZKCvZJxomHvMuKSkeK+Hi8x8iJx3h4BcQ/voJCAcY4OLZN/bZJyIl2TbD2dnZ2R4nHcPZ2dnZHy4nHC0iKCfZAuciLR4mLOEsKxzi2SseLS4rJ9koMfMAHi0CJy8eJy0oKzICLR4mLOEsKxzi2Sgr2TQ22R4nHcPZ2dnZHy4nHC0iKCfZAuciJhogHuEe4tkrHi0uKyfZHucmHi0aHRotGtkaJx3ZHucmHi0aHRotGuciJhogHtkaJx3Z4eAnLiLz6OgoMRgiJy8eJy0oKzLoMB4b6CImGiAeLOjeLOcpJyDg4vMfKCsmGi3hHucmHi0aHRotGuciJhogHuLD2dnZ2dnZ2dkoK9nh4CcuIvPo6CgxGCInLx4nLSgrMugwHhvoIiYaIB4s6N4s5yknIODi8x8oKyYaLeEe5ycaJh7i2R4nHcPZ2dnZHy4nHC0iKCfZAucrHiYoLx4MJSgt4SwrHOXZLCUoLeXZJxomHuXZGiYoLict4tkrHi0uKyfZ4Sgx8wseJigvHgItHibhLCsc5dknGiYe5dkaJiguJy3l2SciJeXZLCUoLeLi2R4nHcPZ2dnZHy4nHC0iKCfZAuccGif8GisrMuEsKxzl2ScaJh7l2RomKC4nLeXZJh4tGh0aLRri2SseLS4rJ9nhKDHz/Bon/BorKzICLR4m4SwrHOXZJxomHuXZGiYoLict5dkmHi0aHRotGuLi2R4nHcPZ2dnZHy4nHC0iKCfZAucgIi8e4SwrHOXZJxomHuXZGiYoLict5dkmHi0aHRotGuLZKx4tLisn2eEoMfP6HR0CLR4m4SwrHOXZJxomHuXZGiYoLict5dkmHi0aHRotGuLi2R4nHcPZ2dnZHy4nHC0iKCfZAuccKC4nLeEsKxzl2ScaJh7i2SseLS4rJ9koMfMMHhorHCHhLCsc5dngHCguJy3g5dknGiYe4tkoK9np2R4nHcPZ2dnZHy4nHC0iKCfZAucrHiYoLx7hLCsc5dknGiYe5dkaJiguJy3i2SseLS4rJ9nhKDHzCx4mKC8eAi0eJuEsKxzl2ScaJh7l2RomKC4nLeLi2R4nHcPZ2dnZHy4nHC0iKCfZAuccJR4aK+EiHeLZKRwaJSXhHy4nHC0iKCfh4tkoMfP8JR4aKwInLx4nLSgrMuEiHeLZHicd4tkeJx3D2dnZ2SseLS4rJ9kCwx4nHcPDJSgcGiXZHy4nHC0iKCfZKhv/GiYiJTLhKx4s4sPZ2dnZKx4tLisn2R8uJxwtIign4eLD2dnZ2dnZ2dklKBwaJdkiJy/Z9tkeMSkoKy0sFCseLBbD2dnZ2dnZ2dklKBwaJdkmGiMoK9n22S0oJy4mGx4r4eEAHi0LHiwoLiscHgYeLRodGi0a4SseLOXZ4C8eKywiKCfg5dnp4tkoK9ng4OLzJhotHCHh4Bfh3h3k4uDi4tkoK9npw9nZ2dnZ2dnZJSgcGiXZJigdHisn2fbZKx4s2fb22eAqG+YiJy8eJy0oKzLg2RonHdkmGiMoK9n39tnrw9nZ2dnZ2dnZJSgcGiXZGzL+MSkoKy3Z9tkmKB0eKyfZKCvZKx4s2fb22eApLOYiJy8eJy0oKzLgw9nZ2dnZ2dnZJSgcGiXZAtn22TQ2w9nZ2dnZ2dnZHy4nHC0iKCfZAucrHiAiLC0eK+Hi2R4nHcPZ2dnZ2dnZ2R8uJxwtIign2QLnKCkeJ+EsKxzl2SId5dksJSgtLOXZMB4iICEt5dklGhseJeLD2dnZ2dnZ2dnZ2dnZIh/ZGzL+MSkoKy3ZLSEeJ8PZ2dnZ2dnZ2dnZ2dnZ2dnZIicv8wgpHicCJy8eJy0oKzLhLCsc5dkiHeXZNNklGhseJdn22SUaGx4l5dkmGjEwHiIgIS3Z9tkwHiIgIS3l2SwlKC0s2fbZLCUoLSzZNuLD2dnZ2dnZ2dnZ2dnZHiUsHsPZ2dnZ2dnZ2dnZ2dnZ2dnZDSsiICAeK/wlIh4nLf4vHict4eAsLB/zJR4gGhwyDC0aLCHg5dksKxzl2SId5dksJSgtLOXZMB4iICEt5dklGhseJeLD2dnZ2dnZ2dnZ2dnZHicdw9nZ2dnZ2dnZ2dnZ2SseLS4rJ9ktKy4ew9nZ2dnZ2dnZHicdw9nZ2dnZ2dnZJSgcGiXZHy4nHC0iKCfZLBovHh3hIh3iw9nZ2dnZ2dnZ2dnZ2SUoHBol2SsoMMPZ2dnZ2dnZ2dnZ2dkiH9kmKB0eKyfZLSEeJ8PZ2dnZ2dnZ2dnZ2dnZ2dnZKygw2fbZBjIMCgXnLCInICUe5xowGiIt4eAM/gX+/A3ZIi0eJizZ/wsIBtkiJy8eJy0oKyIeLNkQAf4L/tkiHR4nLSIfIh4r2fbZ+ODl2TTZIh3ZNuLD2dnZ2dnZ2dnZ2dnZHiUsHsPZ2dnZ2dnZ2dnZ2dnZ2dnZKygw2fbZBjIMCgXnLCInICUe5xowGiIt4eAM/gX+/A3ZIi0eJizZ/wsIBtksLRosISItHiYs2RAB/gv+2SwtGiwh2fbZ+ODl2TTZIh3ZNuLD2dnZ2dnZ2dnZ2dnZHicdw9nZ2dnZ2dnZ2dnZ2SseLS4rJ9krKDDZGicd2SMsKCfnHR4cKB0e4SsoMOciLR4mLNkoK9ngFBbg4tkoK9k0NsPZ2dnZ2dnZ2R4nHcPZ2dnZ2dnZ2R8uJxwtIign2QLnLC0aLCHhIh3iw9nZ2dnZ2dnZ2dnZ2SIf2SYoHR4rJ9ktIR4nw9nZ2dnZ2dnZ2dnZ2dnZ2dklKBwaJdkoJOXZHRotGtn22SkcGiUl4R8uJxwtIign4eLZKx4tLisn2SInL/MAHi0CJy8eJy0oKzLhIh3i2R4nHeLD2dnZ2dnZ2dnZ2dnZ2dnZ2SIf2Sgk2RonHdkdGi0a2RonHdkdGi0a5yItHiYs2S0hHifZKx4tLisn2R0aLRrnIi0eJizZHicdw9nZ2dnZ2dnZ2dnZ2R4nHcPZ2dnZ2dnZ2dnZ2dklKBwaJdkoJOXZIi0eJizZ9tkpHBolJeEsGi8eHeXZIh3iw9nZ2dnZ2dnZ2dnZ2SIf2ScoLdkoJNktIR4n2SseLS4rJ9knIiXZHicdw9nZ2dnZ2dnZ2dnZ2SseLS4rJ9kiLR4mLMPZ2dnZ2dnZ2R4nHcPZ2dnZ2dnZ2R8uJxwtIign2QLnHR4f4ScaJh7iw9nZ2dnZ2dnZ2dnZ2SUoHBol2R3Z9tn7KyIdIB7nHzDnIi0eJv0eH+EnGiYe4sPZ2dnZ2dnZ2dnZ2dkrHi0uKyfZHdkaJx3ZNNklGhseJdn22R3nJRobHiXl2TAeGikoJ9n22R3nLTIpHtn29tngMB4aKSgn4OXZIiYaIB7Z9tkd5yImGiAe2TbD2dnZ2dnZ2dkeJx3D2dnZ2dnZ2dkfLiccLSIoJ9kC5yItHiYs4SwrHOLZKx4tLisn2fsrIh0gHucfMOciLR4mLOEsKxzi2R4nHcPZ2dnZ2dnZ2R8uJxwtIign2QLnIiYaIB7hHuLD2dnZ2dnZ2dnZ2dnZJSgcGiXZHdn22fsrIh0gHucfMOciLR4m/R4f4R7nJxomHuLD2dnZ2dnZ2dnZ2dnZKx4tLisn2eHgJy4i8+jo3izoIS0mJegiJhogHizo3izg4vMfKCsmGi3hKx4s5dke5yImGiAe2Sgr2eEd2RonHdkd5yImGiAe4tkoK9nhHucnGiYe2efn2eDnKScg4OLiw9nZ2dnZ2dnZHicdw9nZ2dnZ2dnZHy4nHC0iKCfZAucrHiYoLx4MJSgt4SwrHOXZLCUoLeXZJxomHuXZGiYoLict4tkrHi0uKyfZ4SInL/MLHiYoLx4CLR4m4SwrHOXZJxomHuXZGiYoLict5dksJSgt5dngLCwf4OLi2R4nHcPZ2dnZ2dnZ2R8uJxwtIign2QLnHBon/BorKzLhLCsc5dknGiYe5dkaJiguJy3iw9nZ2dnZ2dnZ2dnZ2SIf2ScoLdkmKB0eKyfZLSEeJ9krHi0uKyfZLSsuHtkeJx3D2dnZ2dnZ2dnZ2dnZKx4tLisn2eEiJy/z/Bon+h0dAi0eJuEsKxzl2ScaJh7l2RomKC4nLeLiw9nZ2dnZ2dnZHicdw9nZ2dnZ2dnZHy4nHC0iKCfZAucgIi8e4SwrHOXZJxomHuXZGiYoLict5dkmHi0aHRotGuLZKx4tLisn2eEiJy/z+h0dAi0eJuEsKxzl2ScaJh7l2RomKC4nLeXZHxolLB7l2SYeLRodGi0a5dngLCwf4OLi2R4nHcPZ2dnZ2dnZ2R8uJxwtIign2QLnHCguJy3hLCsc5dknGiYe4sPZ2dnZ2dnZ2dnZ2dklKBwaJdkoJOXZJ9n22SkcGiUl4R8uJxwtIign4eLZKx4tLisn2SInL/MAHi0CLR4m/CguJy3hLCsc5dknGiYe4tkeJx3iw9nZ2dnZ2dnZ2dnZ2SIf2Sgk2RonHdkn2S0hHifZKx4tLisn2SfZHicdw9nZ2dnZ2dnZ2dnZ2SUoHBol2S0oLRol2fbZ6cPZ2dnZ2dnZ2dnZ2dkfKCvZGOXZHtkiJ9kpGiIrLOH7KyIdIB7nHzDnIi0eJizhLCsc4uLZHSjZIh/ZHucnGiYe2fb22ScaJh7ZLSEeJ9ktKC0aJdn22S0oLRol2eTZHCguJy3hHuLZHicd2R4nHcPZ2dnZ2dnZ2dnZ2dkrHi0uKyfZLSgtGiXD2dnZ2dnZ2dkeJx3D2dnZ2dnZ2dkfLiccLSIoJ9kC5yseJigvHuEsKxzl2ScaJh7l2RomKC4nLeLZKx4tLisn2eEiJy/zCx4mKC8eAi0eJuEsKxzl2ScaJh7l2RomKC4nLeXZHxolLB7l2eAsLB/g4uLZHicdw9nZ2dnZ2dnZHy4nHC0iKCfZAuccJR4aK+EiHeLD2dnZ2dnZ2dnZ2dnZIh/ZJigdHisn2S0hHifD2dnZ2dnZ2dnZ2dnZ2dnZ2SkcGiUl4R8uJxwtIign4eLZIicv8/wlHhorDC0aLCHhIh3i2R4nHeLD2dnZ2dnZ2dnZ2dnZ2dnZ2QYyDAoF5youHisy4eD9/gX+Df7Z/wsIBtkiJy8eJy0oKyIeLNkQAf4L/tkiHR4nLSIfIh4r2fbZ+ODl2TTZIh3ZNuLD2dnZ2dnZ2dnZ2dnZ2dnZ2SseLS4rJ8PZ2dnZ2dnZ2dnZ2dkeJx3D2dnZ2dnZ2dnZ2dnZBjIMCgXnKi4eKzLh4P3+Bf4N/tn/CwgG2SwtGiwhIi0eJizZEAH+C/7ZLC0aLCHZ9tn44OXZNNkiHdk24sPZ2dnZ2dnZ2R4nHcPZ2dnZ2dnZ2SseLS4rJ9kCw9nZ2dkeJx3DHicdwwInLx4nLSgrIh4sFOAqG+YiJy8eJy0oKzLgFtn22Sob/xomIiUy4eAqG+YiJy8eJy0oKzLg4sMCJy8eJy0oKyIeLBTgKSzmIicvHictKCsy4BbZ9tkqG/8aJiIlMuHgKSzmIicvHictKCsy4OLDAicvHictKCsiHiwU4CUj5iInLx4nLSgrMuAW2fbZKhv/GiYiJTLh4CUj5iInLx4nLSgrMuDiw8MlKBwaJdkfMOXZIicvw8MlKBwaJdkfLiccLSIoJ9kfKxomHjAoKyTh4sPZ2dnZIh/ZHzDZLSEeJ9krHi0uKyfZHzDZHicdw9nZ2dklKBwaJdknGiYe2fbZHR4tHhwt4fwoJx8iIOf/KxomHjAoKyTl2TTZ4CobMRgcKCse4OXZ4Cob5hwoKx7g5dngHiwYHjEtHicdHh3g2Tbiw9nZ2dklKBwaJdkmGiQe2fbZJxomHtkaJx3Z/ysaJh4wKCskLBQnGiYeFsPZ2dnZIh/ZJygt2SYaJB7ZLSEeJ9keKysoK+Hh4Cco2SwuKSkoKy0eHdkfKxomHjAoKyTZHyguJx3Z4d4s4uDi8x8oKyYaLeEtKCwtKyInIOH8KCcfIiDn/ysaJh4wKCsk4uLi2R4nHcPZ2dnZHzDZ9tkmGiQe4eLD2dnZ2R8w5yseLCguKxwe2fbZJxomHsPZ2dnZKx4tLisn2R8wwx4nHcPDJSgcGiXZHy4nHC0iKCfZIicvHictKCsy4eLD2dnZ2SIf2SInL9ktIR4n2SseLS4rJ9kiJy/ZHicdw9nZ2dklKBwaJdknGiYe2fbZHR4tHhwt4fwoJx8iIOcCJy8eJy0oKzLl2TTZ4CgxGCInLx4nLSgrMuDl2eAqG+YiJy8eJy0oKzLg5dngKSzmIicvHictKCsy4OXZ4CUj5iInLx4nLSgrMuDZNuLD2dnZ2SUoHBol2SYaJB7Z9tknGiYe2RonHdkCJy8eJy0oKyIeLBQnGiYeFsPZ2dnZIh/ZJygt2SYaJB7ZLSEeJ9keKysoK+Hh4Cco2SwuKSkoKy0eHdkiJy8eJy0oKzLZHyguJx3Z4d4s4uDi8x8oKyYaLeEtKCwtKyInIOH8KCcfIiDnAicvHictKCsy4uLi2R4nHcPZ2dnZIicv2fbZJhokHuHiw9nZ2dkiJy/nKx4sKC4rHB7Z9tknGiYew9nZ2dkrHi0uKyfZIicvwx4nHcPD+ysiHSAe5x8w2fbZLB4tJh4tGi0aGyUe4TQ25dk02RgYIicdHjHZ9tkfLiccLSIoJ+EY5dkk4tkrHi0uKyfZHysaJh4wKCsk4eIUJBbZHicd2Tbiw/srIh0gHuciJy/Z9tksHi0mHi0aLRobJR7hNDbl2TTZGBgiJx0eMdn22R8uJxwtIign4Rjl2STi2SseLS4rJ9kiJy8eJy0oKzLh4hQkFtkeJx3ZNuLDwx8uJxwtIign2fsrIh0gHuciHeEsKxzi2SseLS4rJ9kfKxomHjAoKyTh4uciHeEsKxzi2R4nHcMfLiccLSIoJ9n7KyIdIB7nJxomHuEsKxzi2SseLS4rJ9kfKxomHjAoKyTh4ucnGiYe4SwrHOLZHicdwx8uJxwtIign2fsrIh0gHucjKBvhLCsc4tkrHi0uKyfZHysaJh4wKCsk4eLnIygb4SwrHOLZHicdwx8uJxwtIign2fsrIh0gHucpGjLhLCsc5dkaJiguJy3l2SseGiwoJ+LZKx4tLisn2RomKC4nLdn19tnp2Sgr2eEfKxomHjAoKyTh4ucpGjLhLCsc5dkaJiguJy3l2SseGiwoJ+LZGicd2S0rLh7ZKCvZHxolLB7i2R4nHcMfLiccLSIoJ9n7KyIdIB7nGh0dBignHjLhLCsc5dkaHBwoLict5dkaJiguJy3l2SseGiwoJ+LZIh/ZGiYoLict2ffZ6dktIR4n2R8rGiYeMCgrJOHi5yAiLx7hLCsc5dkaHBwoLict5dkaJiguJy3l2SseGiwoJ+LZHicd2R4nHcMfLiccLSIoJ9n7KyIdIB7nKCclIice4SId4tkrHi0uKyfZIh3ZGicd2R8rGiYeMCgrJOHi5ygnJSInHuEiHeLZHicdwx8uJxwtIign2fsrIh0gHuceMSIsLSzhLCsc4tkrHi0uKyfZHysaJh4wKCsk4eLnHjEiLC0s4SwrHOLZHicdwx8uJxwtIign2fsrIh0gHucoJwklGjIeKwUoGh0eHeEcG+LD2dnZ2fwrHhotHg0hKx4aHeEfLiccLSIoJ+Hiw9nZ2dnZ2dnZJSgcGiXZLSsiHizZ9tnpw9nZ2dnZ2dnZMCEiJR7ZJygt2SkcGiUl4R8rGiYeMCgrJOLZHSjD2dnZ2dnZ2dnZ2dnZLSsiHizZ9tktKyIeLNnk2erD2dnZ2dnZ2dnZ2dnZIh/ZLSsiHizZ9vbZ7OnZLSEeJ9kpKyInLeHh4BfqFN4sFtknKNksLikpKCstHh3ZHysaJh4wKCsk2SIs2SsuJyciJyAX8ODi8x8oKyYaLeEAHi38LisrHictCx4sKC4rHB4HGiYe4eLi4tkeJx3D2dnZ2dnZ2dnZ2dnZEBoiLeHq6enp4sPZ2dnZ2dnZ2R4nHcPZ2dnZ2dnZ2R8rGiYeMCgrJOHi5ygnBSgaHR4d4Rwb4sPZ2dnZHicd4sMeJx3Dwx8uJxwtIign2fsrIh0gHucrHiAiLC0eKwwtGiwh4SId5dklGhseJeXZLCUoLSzl2TAeIiAhLeLZIicvHictKCsy4eLnKx4gIiwtHivhIh3l2SUaGx4l5dksJSgtLOXZMB4iICEt4tkeJx3DHy4nHC0iKCfZ+ysiHSAe5ygpHicMLRosIeEsKxzl2SId5dksJSgtLOXZMB4iICEt5dklGhseJeLZKx4tLisn2SInLx4nLSgrMuHi5ygpHifhLCsc5dkiHeXZLCUoLSzl2TAeIiAhLeXZJRobHiXi2RonHdktKy4e2Sgr2R8aJSwe2R4nHcMfLiccLSIoJ9n7KyIdIB7nHCUeGisMLRosIeEiHeLZIicvHictKCsy4eLnHCUeGivhIh3i2R4nHcPDHy4nHC0iKCfZ+ysiHSAe5ywtGiwhAi0eJizhIh3iw9nZ2dklKBwaJdkrGjDZ9tkiJy8eJy0oKzLh4ucsLRosIeEiHeLD2dnZ2SIf2SsaMNn29tknIiXZLSEeJ9krHi0uKyfZJyIl2R4nHcPZ2dnZJSgcGiXZLC4m5dkoKx0eK9n22TQ25dk0NsPZ2dnZHygr2Rjl2R7ZIifZKRoiKyzhKxow4tkdKMPZ2dnZ2dnZ2SUoHBol2SfZ9tkcKC4nLeEe4sPZ2dnZ2dnZ2SIf2R7nJxomHtkaJx3ZJ9n32enZLSEeJ8PZ2dnZ2dnZ2dnZ2dkiH9knKC3ZLC4mFB7nJxomHhbZLSEeJ9koKx0eKxTcKCsdHivZ5NnqFtn22R7nJxomHtkeJx3D2dnZ2dnZ2dnZ2dnZLC4mFB7nJxomHhbZ9tnhLC4mFB7nJxomHhbZKCvZ6eLZ5Nknw9nZ2dnZ2dnZHicdw9nZ2dkeJx3D2dnZ2SUoHBol2SguLdn22TQ2w9nZ2dkfKCvZIuXZJxomHtkiJ9kiKRoiKyzhKCsdHivi2R0o2SguLRQiFtn22TTZJxomHtn22ScaJh7l2RwoLict2fbZLC4mFCcaJh4W2TbZHicdw9nZ2dkrHi0uKyfZKC4twx4nHcPDHy4nHC0iKCfZ+ysiHSAe5yItHib9Hh/hJxomHuLZKx4tLisn2SInLx4nLSgrMuHi5x0eH+EnGiYe4tkeJx3Dwx8uJxwtIign2fsrIh0gHuciLR4mBRobHiXhJxomHuLD2dnZ2SUoHBol2R3Z9tkiJy8eJy0oKzLh4ucdHh/hJxomHuLD2dnZ2SseLS4rJ9kd2RonHdkd5yUaGx4l2Sgr2ScaJh7DHicdw8MfLiccLSIoJ9n7KyIdIB7nKSUaMh4rAi0eJizhLCsc4sPZ2dnZJSgcGiXZAtn22SInLx4nLSgrMuHiw9nZ2dklKBwaJdkoLi3Z9tk0NsPZ2dnZHygr2Rjl2R7ZIifZKRoiKyzhAuciLR4mLOEsKxzi2Sgr2TQ24tkdKMPZ2dnZ2dnZ2SUoHBol2SfZ9tkcKC4nLeEe4sPZ2dnZ2dnZ2SIf2R7nJxomHtkaJx3ZJ9n32enZLSEeJ8PZ2dnZ2dnZ2dnZ2dklKBwaJdkdHh/Z9tkC5x0eH+Ee5ycaJh7iw9nZ2dnZ2dnZ2dnZ2SUoHBol2SYeLRrZ9tke5yYeLRodGi0a2Sgr2R7nIicfKMPZ2dnZ2dnZ2dnZ2dkoLi0U3CguLdnk2eoW2fbZNNksJSgt2fbZLSgnLiYbHivhHucsJSgt4uXZJxomHtn22R7nJxomHuXZJRobHiXZ9tke5yUaGx4l2Sgr2eEdHh/ZGicd2R0eH+clGhseJeLZKCvZHucnGiYe5cPZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dkcKC4nLdn22Sfl2SYeLRodGi0a2fbZLTIpHuEmHi0a4tn29tngLRobJR7g2RonHdkmHi0a2Sgr2TQ25dkiJhogHtn22QLnIiYaIB7hHuLlw9nZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2TAeGikoJ9n22SIsEB4aKSgn4R7nJxomHuXZHR4f4uXZJigdHiXZ9tkdHh/ZGicd2R0eH+cmKB0eJdk2w9nZ2dnZ2dnZHicdw9nZ2dkeJx3D2dnZ2S0aGyUe5ywoKy3hKC4t5dkfLiccLSIoJ+Ea5dkb4tkrHi0uKyfZ4RrnLCUoLdkoK9np4tn12eEb5ywlKC3ZKCvZ6eLZHicd4sPZ2dnZKx4tLisn2SguLcMeJx3Dwx8uJxwtIign2fsrIh0gHucrHiYoLx7/KygmDCUoLeEsKxzl2SwlKC3l2ScaJh7l2RomKC4nLeLZKx4tLisn2SInLx4nLSgrMuHi5yseJigvHgwlKC3hLCsc5dksJSgt5dknGiYe5dkaJiguJy3i2RonHdktKy4e2Sgr2R8aJSwe2R4nHcMfLiccLSIoJ9n7KyIdIB7nHBon/BorKzLhLCsc5dknGiYe5dkaJiguJy3l2SYeLRodGi0a4tkrHi0uKyfZIicvHictKCsy4eLnHBon/BorKzLhLCsc5dknGiYe5dkaJiguJy3l2SYeLRodGi0a4tkaJx3ZLSsuHtkoK9kfGiUsHtkeJx3DHy4nHC0iKCfZ+ysiHSAe5yAiLx4CLR4m4SwrHOXZJxomHuXZGiYoLict5dkmHi0aHRotGuLZKx4tLisn2SInLx4nLSgrMuHi5yAiLx7hLCsc5dknGiYe5dkaJiguJy3l2SYeLRodGi0a4tkaJx3ZLSsuHtkoK9kfGiUsHtkeJx3DHy4nHC0iKCfZ+ysiHSAe5yItHib8KC4nLeEsKxzl2ScaJh7i2SseLS4rJ9ktKCcuJhseK+EiJy8eJy0oKzLh4uccKC4nLeEsKxzl2ScaJh7i4tkoK9np2R4nHcMfLiccLSIoJ9n7KyIdIB7nKx4mKC8eAi0eJuEsKxzl2ScaJh7l2RomKC4nLeLZKx4tLisn2SInLx4nLSgrMuHi5yseJigvHuEsKxzl2ScaJh7l2RomKC4nLeLZGicd2S0rLh7ZKCvZHxolLB7ZHicdw8MlKBwaJdknKC0iHzIEIicd2fbZNNkpKyImGisy2fbZ4CInHygrJuDl2SInHyjZ9tngIicfKCsm4OXZLC4cHB4sLNn22eAsLhwcHiws4OXZHisrKCvZ9tngHisrKCvg2TbDwx8uJxwtIign2fsrIh0gHucnKC0iHzLhLCsc5dkkIicd5dktHjEt4sPZ2dnZJSIb5ycoLSIfMuEsKxzl2TTZHR4sHCsiKS0iKCfZ9tktHjEt5dktMike2fbZJygtIh8yBCInHRQkIicdFtkoK9ngIicfKCsm4Nk24sMeJx3Dwx8uJxwtIign2fsrIh0gHucaJR4rLQkoJSIcHuEsKxzl2S4nIi3l2RwoKCsdLOLD2dnZ2SUoHBol2f3Z9tn8KCcfIiDn/SIsKRotHCHD2dnZ2SIf2R0eLR4cLeH95ywyLC0eJuXZNNngKSzmHSIsKRotHCHg2Tbi2fb22eApLOYdIiwpGi0cIeDZLSEeJ8PZ2dnZ2dnZ2Q0rIiAgHiv8JSIeJy3+Lx4nLeHgLCwf8x0iLCkaLRwh4OXZLCsc5dkuJyIt4sPZ2dnZ2dnZ2SseLS4rJ8PZ2dnZHicdw9nZ2dkfKCvZGOXZLNkiJ9kiKRoiKyzhAB4tCSUaMh4rLOHi4tkdKMPZ2dnZ2dnZ2SUoHBol2SId2fbZLSgnLiYbHivhLOLD2dnZ2dnZ2dklKBwaJdknGiYe5dkgKxodHuXZHS4tMtn22fsrIh0gHucjKBvhIh3iw9nZ2dnZ2dnZJSgcGiXZJiIn2fbZ/CgnHyIg5wkoJSIcHgMoGywUJxomHtkoK9ng4BbD2dnZ2dnZ2dkiH9kmIifZGicd2SArGh0e2ff22SYiJ9kaJx3ZHS4tMtktIR4nw9nZ2dnZ2dnZ2dnZ2fsrIh0gHucnKC0iHzLhIh3l2eAeKysoK+Dl2SUoHBolHuHgHSIsKRotHCEYJygtIh8y4OXZLiciLeLiw9nZ2dnZ2dnZ2dnZ2Q0rIiAgHiv8JSIeJy3+Lx4nLeHgLCwf8ykoJSIcHvslIing5dkiHeXZLiciLeXZHCgoKx0s4sPZ2dnZ2dnZ2R4nHcPZ2dnZHicdwx4nHcPDHy4nHC0iKCfZ+ysiHSAe5x0eLBwrIhse4eLD2dnZ2SseLS4rJ9nh4N4s2ejZ3izg4vMfKCsmGi3hHysaJh4wKCsk4eLnKx4sKC4rHB7l2SInLx4nLSgrMuHi5yseLCguKxwe4sMeJx3D', 185
-local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local m = {}
-for i = 1, #b do m[b:sub(i, i)] = i - 1 end
-local t, n = {}, 1
-for i = 1, #d, 4 do
-    local a1, a2, a3, a4 = m[d:sub(i, i)], m[d:sub(i + 1, i + 1)], m[d:sub(i + 2, i + 2)], m[d:sub(i + 3, i + 3)]
-    local v = a1 * 262144 + a2 * 4096 + (a3 or 0) * 64 + (a4 or 0)
-    t[n] = (math.floor(v / 65536) - k) % 256
-    n = n + 1
-    if a3 then t[n] = (math.floor(v / 256) % 256 - k) % 256
-        n = n + 1 end
-    if a4 then t[n] = (v % 256 - k) % 256
-        n = n + 1 end
+Bridge = {}
+
+local function running(name)
+    local s = GetResourceState(name)
+    return s == 'started' or s == 'starting'
 end
-local s = {}
-for i = 1, #t do s[i] = string.char(t[i]) end
-assert(load(table.concat(s), '@aslab-storage/bridge/server.lua'))()
+
+local function detect(setting, list)
+    if setting and setting ~= 'auto' then return setting end
+    for _, name in ipairs(list) do if running(name) then return name end end
+end
+
+local Frameworks = {}
+
+Frameworks['qb-core'] = function()
+    local QB = exports['qb-core']:GetCoreObject()
+    local F = {}
+    local function get(src) return QB.Functions.GetPlayer(src) end
+    function F.id(src) local p = get(src) return p and p.PlayerData.citizenid end
+    function F.name(src)
+        local p = get(src)
+        local ci = p and p.PlayerData.charinfo or {}
+        return (((ci.firstname or '') .. ' ' .. (ci.lastname or '')):gsub('^%s+', ''))
+    end
+    function F.job(src)
+        local p = get(src)
+        local j = p and p.PlayerData.job or {}
+        return j.name, tonumber(type(j.grade) == 'table' and j.grade.level or j.grade) or 0, j.onduty ~= false
+    end
+    function F.pay(src, amount, reason)
+        local p = get(src)
+        if not p then return false end
+        return p.Functions.RemoveMoney('bank', amount, reason) or p.Functions.RemoveMoney('cash', amount, reason)
+    end
+    function F.give(src, account, amount, reason)
+        local p = get(src)
+        return p ~= nil and p.Functions.AddMoney(account, amount, reason)
+    end
+    function F.online(id)
+        local p = QB.Functions.GetPlayerByCitizenId(id)
+        return p and p.PlayerData.source
+    end
+    function F.exists(src) return get(src) ~= nil end
+    function F.items(src) local p = get(src) return p and p.PlayerData.items or {} end
+    function F.itemDef(name) return QB.Shared.Items[name] or QB.Shared.Items[name:lower()] end
+    function F.onLoaded(cb) AddEventHandler('QBCore:Server:PlayerLoaded', function(p) cb(p.PlayerData.source) end) end
+    return F
+end
+
+Frameworks['qbx_core'] = function()
+    local Q = exports.qbx_core
+    local F = {}
+    local function get(src) return Q:GetPlayer(src) end
+    function F.id(src) local p = get(src) return p and p.PlayerData.citizenid end
+    function F.name(src)
+        local p = get(src)
+        local ci = p and p.PlayerData.charinfo or {}
+        return (((ci.firstname or '') .. ' ' .. (ci.lastname or '')):gsub('^%s+', ''))
+    end
+    function F.job(src)
+        local p = get(src)
+        local j = p and p.PlayerData.job or {}
+        return j.name, tonumber(type(j.grade) == 'table' and j.grade.level or j.grade) or 0, j.onduty ~= false
+    end
+    function F.pay(src, amount, reason)
+        if not get(src) then return false end
+        return Q:RemoveMoney(src, 'bank', amount, reason) or Q:RemoveMoney(src, 'cash', amount, reason)
+    end
+    function F.give(src, account, amount, reason) return Q:AddMoney(src, account, amount, reason) end
+    function F.online(id)
+        local p = Q:GetPlayerByCitizenId(id)
+        return p and p.PlayerData.source
+    end
+    function F.exists(src) return get(src) ~= nil end
+    function F.items(src) local p = get(src) return p and p.PlayerData.items or {} end
+    function F.itemDef() return nil end
+    function F.onLoaded(cb) AddEventHandler('QBCore:Server:PlayerLoaded', function(p) cb(p.PlayerData.source) end) end
+    return F
+end
+
+Frameworks['es_extended'] = function()
+    local ESX = exports.es_extended:getSharedObject()
+    local F = {}
+    local function get(src) return ESX.GetPlayerFromId(src) end
+    function F.id(src) local p = get(src) return p and p.identifier end
+    function F.name(src) local p = get(src) return p and p.getName() or '' end
+    function F.job(src)
+        local p = get(src)
+        local j = p and p.getJob() or {}
+        return j.name, tonumber(j.grade) or 0, j.onDuty ~= false
+    end
+    function F.pay(src, amount, reason)
+        local p = get(src)
+        if not p then return false end
+        local bank = p.getAccount('bank')
+        if bank and bank.money >= amount then p.removeAccountMoney('bank', amount, reason) return true end
+        if p.getMoney() >= amount then p.removeMoney(amount, reason) return true end
+        return false
+    end
+    function F.give(src, account, amount, reason)
+        local p = get(src)
+        if not p then return false end
+        p.addAccountMoney(account == 'cash' and 'money' or account, amount, reason)
+        return true
+    end
+    function F.online(id)
+        local p = ESX.GetPlayerFromIdentifier(id)
+        return p and p.source
+    end
+    function F.exists(src) return get(src) ~= nil end
+    function F.items(src) local p = get(src) return p and p.getInventory() or {} end
+    function F.itemDef(name) return ESX.Items and ESX.Items[name] end
+    function F.onLoaded(cb) AddEventHandler('esx:playerLoaded', function(src) cb(src) end) end
+    return F
+end
+
+local function count(e)
+    return tonumber(e.count) or (type(e.amount) == 'table' and tonumber(e.amount.actual)) or tonumber(e.amount) or 0
+end
+
+local function isWeapon(name, def)
+    return (def and (def.isWeapon or def.weapon or def.type == 'weapon')) and true or name:lower():find('^weapon_') ~= nil
+end
+
+local Inventories = {}
+
+Inventories['ox_inventory'] = function()
+    local ox = exports.ox_inventory
+    local I = {}
+    function I.register(id, label, slots, weight)
+        ox:RegisterStash(id, label, slots, weight)
+        pcall(function() ox:SetSlotCount(id, slots) end)
+        pcall(function() ox:SetMaxWeight(id, weight) end)
+    end
+    function I.open(src, id, slots, weight, label)
+        I.register(id, label, slots, weight)
+        ox:forceOpenInventory(src, 'stash', id)
+        return true
+    end
+    function I.stash(id)
+        local ok, items = pcall(function() return ox:GetInventoryItems(id) end)
+        if not ok then return nil end
+        return items or {}
+    end
+    function I.def(name)
+        local d = ox:Items(name) or ox:Items(name:lower())
+        return d and { label = d.label, weapon = d.weapon or name:upper():find('^WEAPON_') ~= nil }
+    end
+    function I.items(src) return ox:GetInventoryItems(src) or {} end
+    function I.image(e) return e.metadata and e.metadata.image and ('nui://ox_inventory/web/images/%s.png'):format(e.metadata.image)
+        or ('nui://ox_inventory/web/images/%s.png'):format(e.name) end
+    function I.removeSlot(src, slot, name, amount) return (ox:RemoveItem(src, name, amount, nil, slot)) end
+    function I.canCarry(src, name, amount, metadata) return (ox:CanCarryItem(src, name, amount, metadata)) end
+    function I.give(src, name, amount, metadata) return (ox:AddItem(src, name, amount, metadata)) end
+    function I.count(src, name) return ox:Search(src, 'count', name) or 0 end
+    function I.remove(src, name, amount) return (ox:RemoveItem(src, name, amount)) end
+    function I.clear(id) pcall(function() ox:ClearInventory(id) end) end
+    return I
+end
+
+local function qbFamily(res)
+    return function()
+        local inv = exports[res]
+        local major = tonumber((GetResourceMetadata(res, 'version', 0) or ''):match('^(%d+)')) or 0
+        local modern = res == 'qb-inventory' and major >= 2
+        local byExport = modern or res == 'ps-inventory'
+        local I = {}
+        function I.register() end
+        function I.open(src, id, slots, weight, label)
+            if byExport then
+                inv:OpenInventory(src, id, { label = label, maxweight = weight, slots = slots })
+            else
+                TriggerClientEvent('ssf:legacyStash', src, id, slots, weight, label)
+            end
+            return true
+        end
+        local function saved(id)
+            local row
+            if modern then
+                row = MySQL.single.await('SELECT items FROM inventories WHERE identifier = ?', { id })
+            else
+                row = MySQL.single.await('SELECT items FROM stashitems WHERE stash = ?', { id })
+            end
+            return row and json.decode(row.items or '[]') or {}
+        end
+        function I.stash(id)
+            if modern then
+                local ok, data = pcall(function() return inv:GetInventory(id) end)
+                if ok and data and data.items then return data.items end
+            end
+            local ok, items = pcall(saved, id)
+            if not ok then return nil end
+            return items
+        end
+        function I.def(name)
+            local d = Bridge.fw.itemDef(name)
+            return d and { label = d.label, weapon = d.type == 'weapon', image = d.image }
+        end
+        function I.items(src) return Bridge.fw.items(src) end
+        function I.image(e)
+            local d = Bridge.fw.itemDef(e.name)
+            return ('nui://%s/html/images/%s'):format(res, e.image or (d and d.image) or (e.name .. '.png'))
+        end
+        function I.removeSlot(src, slot, name, amount) return (inv:RemoveItem(src, name, amount, slot, 'ssf')) end
+        function I.canCarry(src, name, amount)
+            if not modern then return true end
+            return (inv:CanAddItem(src, name, amount))
+        end
+        function I.give(src, name, amount, metadata) return (inv:AddItem(src, name, amount, false, metadata, 'ssf')) end
+        function I.count(src, name)
+            local ok, n = pcall(function() return inv:GetItemCount(src, name) end)
+            if ok and n then return n end
+            local total = 0
+            for _, e in pairs(Bridge.fw.items(src)) do if e.name == name then total = total + count(e) end end
+            return total
+        end
+        function I.remove(src, name, amount) return (inv:RemoveItem(src, name, amount, false, 'ssf')) end
+        function I.clear(id)
+            if modern then
+                pcall(function() inv:ClearStash(id) end)
+                MySQL.query('DELETE FROM inventories WHERE identifier = ?', { id })
+                return
+            end
+            MySQL.query('DELETE FROM stashitems WHERE stash = ?', { id })
+        end
+        return I
+    end
+end
+Inventories['qb-inventory'] = qbFamily('qb-inventory')
+Inventories['ps-inventory'] = qbFamily('ps-inventory')
+Inventories['lj-inventory'] = qbFamily('lj-inventory')
+
+local fw, inv
+
+local function framework()
+    if fw then return fw end
+    local name = detect(Config.Framework, { 'qbx_core', 'qb-core', 'es_extended' })
+    local make = name and Frameworks[name]
+    if not make then error(('no supported framework found (%s)'):format(tostring(Config.Framework))) end
+    fw = make()
+    fw.resource = name
+    return fw
+end
+
+local function inventory()
+    if inv then return inv end
+    local name = detect(Config.Inventory, { 'ox_inventory', 'qb-inventory', 'ps-inventory', 'lj-inventory' })
+    local make = name and Inventories[name]
+    if not make then error(('no supported inventory found (%s)'):format(tostring(Config.Inventory))) end
+    inv = make()
+    inv.resource = name
+    return inv
+end
+
+Bridge.fw = setmetatable({}, { __index = function(_, k) return framework()[k] end })
+Bridge.inv = setmetatable({}, { __index = function(_, k) return inventory()[k] end })
+
+function Bridge.id(src) return framework().id(src) end
+function Bridge.name(src) return framework().name(src) end
+function Bridge.job(src) return framework().job(src) end
+function Bridge.pay(src, amount, reason) return amount <= 0 or (framework().pay(src, amount, reason) and true or false) end
+function Bridge.addMoney(src, account, amount, reason) if amount > 0 then framework().give(src, account, amount, reason) end end
+function Bridge.online(id) return id and framework().online(id) end
+function Bridge.exists(src) return framework().exists(src) end
+function Bridge.onPlayerLoaded(cb)
+    CreateThread(function()
+        local tries = 0
+        while not pcall(framework) do
+            tries = tries + 1
+            if tries == 30 then print(('^1[%s] no supported framework is running^7'):format(GetCurrentResourceName())) end
+            Wait(1000)
+        end
+        framework().onLoaded(cb)
+    end)
+end
+
+function Bridge.registerStash(id, label, slots, weight) inventory().register(id, label, slots, weight) end
+function Bridge.openStash(src, id, slots, weight, label) return inventory().open(src, id, slots, weight, label) and true or false end
+function Bridge.clearStash(id) inventory().clear(id) end
+
+function Bridge.stashItems(id)
+    local raw = inventory().stash(id)
+    if raw == nil then return nil end
+    local sum, order = {}, {}
+    for _, e in pairs(raw) do
+        local n = count(e)
+        if e.name and n > 0 then
+            if not sum[e.name] then order[#order + 1] = e.name end
+            sum[e.name] = (sum[e.name] or 0) + n
+        end
+    end
+    local out = {}
+    for i, name in ipairs(order) do out[i] = { name = name, count = sum[name] } end
+    return out
+end
+
+function Bridge.itemDef(name) return inventory().def(name) end
+
+function Bridge.itemLabel(name)
+    local d = inventory().def(name)
+    return d and d.label or name
+end
+
+function Bridge.playerItems(src)
+    local I = inventory()
+    local out = {}
+    for _, e in pairs(I.items(src) or {}) do
+        local n = count(e)
+        if e.name and n > 0 then
+            local def = I.def(e.name)
+            local meta = e.metadata or e.info
+            out[#out + 1] = { slot = tonumber(e.slot), name = e.name, label = e.label or (def and def.label) or e.name,
+                              count = n, metadata = type(meta) == 'table' and meta or {}, image = I.image(e),
+                              weapon = isWeapon(e.name, def), model = def and def.model }
+        end
+    end
+    table.sort(out, function(a, b) return (a.slot or 0) < (b.slot or 0) end)
+    return out
+end
+
+function Bridge.removeFromSlot(src, slot, name, amount) return inventory().removeSlot(src, slot, name, amount) and true or false end
+function Bridge.canCarry(src, name, amount, metadata) return inventory().canCarry(src, name, amount, metadata) and true or false end
+function Bridge.giveItem(src, name, amount, metadata) return inventory().give(src, name, amount, metadata) and true or false end
+function Bridge.itemCount(src, name) return tonumber(inventory().count(src, name)) or 0 end
+function Bridge.removeItem(src, name, amount) return inventory().remove(src, name, amount) and true or false end
+
+local notifyKind = { primary = 'inform', info = 'inform', success = 'success', error = 'error' }
+
+function Bridge.notify(src, kind, text)
+    lib.notify(src, { description = text, type = notifyKind[kind] or 'inform' })
+end
+
+function Bridge.alertPolice(src, unit, coords)
+    local D = Config.Dispatch
+    if detect(D.system, { 'ps-dispatch' }) == 'ps-dispatch' then
+        TriggerClientEvent('ssf:dispatch', src, unit)
+        return
+    end
+    for _, s in ipairs(GetPlayers()) do
+        local id = tonumber(s)
+        local name, grade, duty = Bridge.job(id)
+        local min = Config.PoliceJobs[name or '']
+        if min and grade >= min and duty then
+            Bridge.notify(id, 'error', locale('dispatch_notify', unit))
+            TriggerClientEvent('ssf:policeBlip', id, unit, coords)
+        end
+    end
+end
+
+function Bridge.describe()
+    return ('%s / %s'):format(framework().resource, inventory().resource)
+end

@@ -1,18 +1,193 @@
-local d, k = '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', 222
-local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local m = {}
-for i = 1, #b do m[b:sub(i, i)] = i - 1 end
-local t, n = {}, 1
-for i = 1, #d, 4 do
-    local a1, a2, a3, a4 = m[d:sub(i, i)], m[d:sub(i + 1, i + 1)], m[d:sub(i + 2, i + 2)], m[d:sub(i + 3, i + 3)]
-    local v = a1 * 262144 + a2 * 4096 + (a3 or 0) * 64 + (a4 or 0)
-    t[n] = (math.floor(v / 65536) - k) % 256
-    n = n + 1
-    if a3 then t[n] = (math.floor(v / 256) % 256 - k) % 256
-        n = n + 1 end
-    if a4 then t[n] = (v % 256 - k) % 256
-        n = n + 1 end
+Bridge = {}
+
+local function running(name)
+    local s = GetResourceState(name)
+    return s == 'started' or s == 'starting'
 end
-local s = {}
-for i = 1, #t do s[i] = string.char(t[i]) end
-assert(load(table.concat(s), '@aslab-storage/bridge/client.lua'))()
+
+local function detect(setting, list)
+    if setting and setting ~= 'auto' then return setting end
+    for _, name in ipairs(list) do if running(name) then return name end end
+end
+
+local Icons = {
+    rent = 'fas fa-key',
+    sale = 'fas fa-tag',
+    stash = 'fas fa-box-open',
+    panel = 'fas fa-th-large',
+    code = 'fas fa-keyboard',
+    raise = 'fas fa-arrow-up',
+    lower = 'fas fa-arrow-down',
+    police = 'fas fa-shield-alt',
+    lockpick = 'fas fa-unlock',
+    reception = 'fas fa-concierge-bell',
+    trade = 'fas fa-balance-scale',
+    open = 'fas fa-door-open',
+    close = 'fas fa-door-closed',
+    archive = 'fas fa-archive',
+    move = 'fas fa-arrows-alt',
+    dismantle = 'fas fa-tools',
+    take = 'fas fa-hand-paper',
+}
+
+local fwName, fwObj
+
+local function framework()
+    if fwName ~= nil then return fwName, fwObj end
+    fwName = detect(Config.Framework, { 'qbx_core', 'qb-core', 'es_extended' }) or false
+    if fwName == 'qb-core' then fwObj = exports['qb-core']:GetCoreObject()
+    elseif fwName == 'es_extended' then fwObj = exports.es_extended:getSharedObject() end
+    return fwName, fwObj
+end
+
+function Bridge.job()
+    local name, obj = framework()
+    local job
+    if name == 'qbx_core' then job = (exports.qbx_core:GetPlayerData() or {}).job
+    elseif name == 'qb-core' then job = (obj.Functions.GetPlayerData() or {}).job
+    elseif name == 'es_extended' then job = (obj.GetPlayerData() or {}).job end
+    job = job or {}
+    local grade = type(job.grade) == 'table' and job.grade.level or job.grade
+    return job.name, tonumber(grade) or 0, job.onduty ~= false and job.onDuty ~= false
+end
+
+local notifyKind = { primary = 'inform', info = 'inform', success = 'success', error = 'error' }
+
+function Bridge.notify(kind, text)
+    lib.notify({ description = text, type = notifyKind[kind] or 'inform' })
+end
+
+local target
+
+local function targetName()
+    if target ~= nil then return target end
+    target = detect(Config.Target, { 'ox_target', 'qb-target' }) or false
+    return target
+end
+
+function Bridge.waitTarget()
+    for _ = 1, 120 do
+        local t = targetName()
+        if t and GetResourceState(t) == 'started' then return true end
+        target = nil
+        Wait(500)
+    end
+    print(('^1[%s] no supported target resource is running^7'):format(GetCurrentResourceName()))
+    return false
+end
+
+local function oxOptions(options)
+    local out = {}
+    for i, o in ipairs(options) do
+        out[i] = { name = o.name, label = o.label, description = o.description, distance = o.distance,
+                   icon = Icons[o.icon] or o.icon, canInteract = o.canInteract,
+                   onSelect = function() CreateThread(o.onSelect) end }
+    end
+    return out
+end
+
+local function qbOptions(options)
+    local out, dist = {}, 1.5
+    for i, o in ipairs(options) do
+        dist = math.max(dist, o.distance or 0)
+        out[i] = { label = o.label, icon = Icons[o.icon] or o.icon,
+                   canInteract = function() return not o.canInteract or o.canInteract() end,
+                   action = function() CreateThread(o.onSelect) end }
+    end
+    return { options = out, distance = dist }
+end
+
+function Bridge.addZone(name, coords, radius, options)
+    if targetName() == 'qb-target' then
+        exports['qb-target']:AddCircleZone(name, coords, radius, { name = name, useZ = true, debugPoly = false }, qbOptions(options))
+        return name
+    end
+    return exports.ox_target:addSphereZone({ name = name, coords = coords, radius = radius, options = oxOptions(options) })
+end
+
+function Bridge.removeZone(id)
+    local t = targetName()
+    if not id or not t then return end
+    if t == 'qb-target' then return exports['qb-target']:RemoveZone(id) end
+    exports.ox_target:removeZone(id)
+end
+
+function Bridge.addEntity(ent, options)
+    if targetName() == 'qb-target' then return exports['qb-target']:AddTargetEntity(ent, qbOptions(options)) end
+    exports.ox_target:addLocalEntity(ent, oxOptions(options))
+end
+
+function Bridge.removeEntity(ent)
+    if targetName() == 'qb-target' then return exports['qb-target']:RemoveTargetEntity(ent) end
+    exports.ox_target:removeLocalEntity(ent)
+end
+
+function Bridge.progress(label, duration, anim)
+    local data = {
+        duration = duration, label = label, position = 'bottom', useWhileDead = false, canCancel = true,
+        disable = { move = true, car = true, combat = true },
+        anim = anim,
+    }
+    if Config.Progress == 'bar' then return lib.progressBar(data) == true end
+    return lib.progressCircle(data) == true
+end
+
+function Bridge.askCode(title)
+    local input = lib.inputDialog(title, {
+        { type = 'input', label = locale('code_label'), password = true, required = true, min = 4, max = 4, icon = 'lock' },
+    })
+    local value = input and input[1] and tostring(input[1])
+    if not value or value == '' then return nil end
+    if not value:match('^%d%d%d%d$') then
+        Bridge.notify('error', locale('code_digits'))
+        return nil
+    end
+    return value
+end
+
+local textShown = false
+
+function Bridge.showText(text)
+    textShown = true
+    lib.showTextUI(text, { position = 'left-center' })
+end
+
+function Bridge.hideText()
+    if not textShown then return end
+    textShown = false
+    lib.hideTextUI()
+end
+
+RegisterNetEvent('ssf:legacyStash', function(id, slots, weight, label)
+    TriggerServerEvent('inventory:server:OpenInventory', 'stash', id, { maxweight = weight, slots = slots, label = label })
+    TriggerEvent('inventory:client:SetCurrentStash', id)
+end)
+
+RegisterNetEvent('ssf:dispatch', function(unit)
+    local D = Config.Dispatch
+    exports['ps-dispatch']:CustomAlert({
+        message = locale('dispatch_title'),
+        information = locale('dispatch_info', unit),
+        code = D.code,
+        icon = 'fas fa-warehouse',
+        priority = 2,
+        coords = GetEntityCoords(cache.ped),
+        sprite = D.blip.sprite,
+        color = D.blip.color,
+        scale = D.blip.scale,
+        length = 3,
+    })
+end)
+
+RegisterNetEvent('ssf:policeBlip', function(unit, coords)
+    local B = Config.Dispatch.blip
+    local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
+    SetBlipSprite(blip, B.sprite)
+    SetBlipColour(blip, B.color)
+    SetBlipScale(blip, B.scale)
+    SetBlipFlashes(blip, true)
+    BeginTextCommandSetBlipName('STRING')
+    AddTextComponentSubstringPlayerName(locale('dispatch_blip', unit))
+    EndTextCommandSetBlipName(blip)
+    SetTimeout(B.seconds * 1000, function() RemoveBlip(blip) end)
+end)

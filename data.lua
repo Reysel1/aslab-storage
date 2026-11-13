@@ -1,18 +1,53 @@
-local d, k = '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', 211
-local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-local m = {}
-for i = 1, #b do m[b:sub(i, i)] = i - 1 end
-local t, n = {}, 1
-for i = 1, #d, 4 do
-    local a1, a2, a3, a4 = m[d:sub(i, i)], m[d:sub(i + 1, i + 1)], m[d:sub(i + 2, i + 2)], m[d:sub(i + 3, i + 3)]
-    local v = a1 * 262144 + a2 * 4096 + (a3 or 0) * 64 + (a4 or 0)
-    t[n] = (math.floor(v / 65536) - k) % 256
-    n = n + 1
-    if a3 then t[n] = (math.floor(v / 256) % 256 - k) % 256
-        n = n + 1 end
-    if a4 then t[n] = (v % 256 - k) % 256
-        n = n + 1 end
+FacilityData = { units = {}, containers = {}, doors = {}, barriers = {}, sites = {}, siteByKey = {}, unitSite = {} }
+
+local ORDER = { 'paleto', 'sandy', 'cypress' }
+
+local keys, seen = {}, {}
+for _, k in ipairs(ORDER) do
+    if FacilitySites and FacilitySites[k] then keys[#keys + 1] = k; seen[k] = true end
 end
-local s = {}
-for i = 1, #t do s[i] = string.char(t[i]) end
-assert(load(table.concat(s), '@aslab-storage/data.lua'))()
+local extra = {}
+for k in pairs(FacilitySites or {}) do if not seen[k] then extra[#extra + 1] = k end end
+table.sort(extra)
+for _, k in ipairs(extra) do keys[#keys + 1] = k end
+
+for _, k in ipairs(keys) do
+    local s = FacilitySites[k]
+    local site = { key = k, label = s.label, reception = s.reception, trade = s.trade, gate = s.gate, lot = s.lot }
+    FacilityData.sites[#FacilityData.sites + 1] = site
+    FacilityData.siteByKey[k] = site
+    for _, list in ipairs({ 'units', 'containers', 'doors', 'barriers' }) do
+        for _, e in ipairs(s[list] or {}) do
+            e.site = k
+            local dst = FacilityData[list]
+            dst[#dst + 1] = e
+        end
+    end
+    for _, u in ipairs(s.units or {}) do FacilityData.unitSite[u.id] = k end
+    for _, c in ipairs(s.containers or {}) do FacilityData.unitSite[c.id] = k end
+end
+
+local MainKinds = { shutter = true, cdoor = true }
+FacilityData.mainDoors, FacilityData.hatches = {}, {}
+for _, d in ipairs(FacilityData.doors) do
+    if MainKinds[d.kind] then
+        FacilityData.mainDoors[d.unit] = FacilityData.mainDoors[d.unit] or {}
+        table.insert(FacilityData.mainDoors[d.unit], d.id)
+    elseif d.kind == 'hatch' then
+        FacilityData.hatches[#FacilityData.hatches + 1] = d
+    end
+end
+
+function FacilityData.overHatch(unit, pos, margin)
+    margin = margin or 0.3
+    for _, d in ipairs(FacilityData.hatches) do
+        if d.unit == unit then
+            local r = math.rad(d.heading)
+            local dx, dy = pos.x - d.coords.x, pos.y - d.coords.y
+            local lx = dx * math.cos(r) + dy * math.sin(r)
+            local ly = -dx * math.sin(r) + dy * math.cos(r)
+            if math.abs(lx) <= d.w / 2 + margin and ly <= margin and ly >= -d.d - margin then return true end
+        end
+    end
+    return false
+end
