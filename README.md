@@ -45,7 +45,7 @@ Rent a unit or a container, keep your things inside and see them on display. The
 3. The database tables (`ssf_storage_rentals`, `ssf_storage_meta`, `ssf_storage_placed`) are created on first start. No SQL file is needed.
 4. Spanish interface: add `setr ox:locale "es"` to `server.cfg`. English is the default.
 
-The Lua scripts ship encoded, so the source cannot be read; they are decoded in memory when the resource starts. `config.lua` stays plain so you can edit it, and the map files and the interface are plain files too.
+The full source ships with the resource: every Lua script, the interface and the map files are plain files you can read and edit.
 
 ### Map conflicts
 
